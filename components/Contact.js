@@ -15,6 +15,7 @@ import emailImg from "../images/email.png";
 // import hamburgerImg from "../images/hamburger.png";
 import email from "react-native-email";
 import TitleBar from "./TitleBar";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const TWITTER_URL =
   "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
@@ -73,7 +74,8 @@ class Contact extends Component {
                     <Text style={styles.webText}>View in web</Text>
                   </View>
                   <View style={styles.webImgWrapper}>
-                    <Image style={styles.webImg} source={webImg} />
+                    {/* <Image style={styles.webImg} source={webImg} /> */}
+                    <Icon name="web" color="white" size={60} />
                   </View>
                 </View>
               </TouchableHighlight>
@@ -85,10 +87,11 @@ class Contact extends Component {
                     <Text style={styles.emailText}>Email</Text>
                   </View>
                   <View style={styles.emailImgWrapper}>
-                    <Image
+                    {/* <Image
                       style={{ width: 50, height: 50 }}
                       source={emailImg}
-                    />
+                    /> */}
+                    <Icon name="email-outline" color="white" size={60} />
                   </View>
                 </View>
               </TouchableHighlight>

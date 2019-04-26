@@ -5,33 +5,14 @@ export default {
     backgroundColor: "#444"
   },
   contactWrapper: {
-    paddingTop: 50,
-    paddingBottom: 60,
     paddingLeft: 30,
-    paddingRight: 30
-  },
-  titleWrapper: {
-    height: "15%",
-    width: "100%",
-    justifyContent: "center",
-    backgroundColor: "#6200ee"
-  },
-  hamburger: {
-    position: "absolute",
-    height: "15%",
-    justifyContent: "center",
-    marginLeft: 5
-  },
-  title: {
-    fontSize: 24,
-    color: "#fff",
-    fontWeight: "bold",
-    textAlign: "center"
+    paddingRight: 30,
+    paddingTop: 50,
+    height: "90%",
+    justifyContent: "space-around"
   },
   website: {
     height: "15%",
-    marginTop: 10,
-    marginBottom: 10,
     borderStyle: "solid",
     borderColor: "#aaa",
     borderWidth: 1,
@@ -39,18 +20,20 @@ export default {
   },
   webTouchWrapper: {
     height: "100%",
-    flexDirection: "row",
-    justifyContent: "space-around"
+    flexDirection: "row"
   },
   webTextWrapper: {
-    justifyContent: "center"
+    justifyContent: "center",
+    width: "70%"
   },
   webText: {
     color: "#ddd",
-    fontSize: 20
+    fontSize: 20,
+    textAlign: "center"
   },
   webImgWrapper: {
-    justifyContent: "center"
+    justifyContent: "center",
+    width: "30%"
   },
   webImg: {
     width: 50,
@@ -58,8 +41,6 @@ export default {
   },
   email: {
     height: "15%",
-    marginTop: 30,
-    marginBottom: 10,
     borderStyle: "solid",
     borderColor: "#ddd",
     borderWidth: 1,
@@ -69,18 +50,20 @@ export default {
   },
   emailTouchWrapper: {
     height: "100%",
-    flexDirection: "row",
-    justifyContent: "space-around"
+    flexDirection: "row"
   },
   emailTextWrapper: {
-    justifyContent: "center"
+    justifyContent: "center",
+    width: "70%"
   },
   emailText: {
     color: "#ddd",
-    fontSize: 20
+    fontSize: 20,
+    textAlign: "center"
   },
   emailImgWrapper: {
-    justifyContent: "center"
+    justifyContent: "center",
+    width: "30%"
   },
   emailImg: {
     width: 50,
@@ -88,17 +71,16 @@ export default {
   },
   credit: {
     height: "10%",
-    marginTop: 40,
-    marginBottom: 10,
+    marginTop: 50,
     justifyContent: "center"
   },
   social: {
     flexDirection: "row",
     justifyContent: "space-around",
     height: "10%",
-    marginBottom: 10,
     marginLeft: 30,
-    marginRight: 30
+    marginRight: 30,
+    marginBottom: 50
   },
   facebook: {
     justifyContent: "center"

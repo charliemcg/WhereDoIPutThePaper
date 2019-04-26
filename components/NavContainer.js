@@ -6,6 +6,12 @@ import Contact from "./Contact";
 
 const Navigator = createDrawerNavigator(
   {
+    Contact: {
+      screen: Contact,
+      navigationOptions: {
+        drawerLabel: "Contact"
+      }
+    },
     Home: {
       screen: Home,
       navigationOptions: {
@@ -22,12 +28,6 @@ const Navigator = createDrawerNavigator(
       screen: Twinning,
       navigationOptions: {
         drawerLabel: "Contribute to Toilet Twinning"
-      }
-    },
-    Contact: {
-      screen: Contact,
-      navigationOptions: {
-        drawerLabel: "Contact"
       }
     }
   },
