@@ -6,7 +6,7 @@ import {
   ScrollView,
   Alert,
   ActivityIndicator,
-  // TouchableHighlight,
+  TouchableHighlight,
   Button,
   Linking
 } from "react-native";
@@ -19,6 +19,7 @@ import { countries } from "../countryList";
 import AsyncStorage from "@react-native-community/async-storage";
 // import hamburgerImg from "../images/hamburger.png";
 import TitleBar from "./TitleBar";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 //<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
@@ -100,7 +101,21 @@ class Home extends Component {
           <View style={styles.descriptionWrapper}>
             <Text style={styles.description}>{this.props.description}</Text>
           </View>
-          <Button onPress={this.handlePress} title="Get the book" />
+          {/* <Button onPress={this.handlePress} title="Get the book" /> */}
+          <TouchableHighlight
+            onPress={this.handlePress}
+            style={styles.bookButton}
+          >
+            <View style={styles.getBookWrapper}>
+              <View style={styles.textWrapper}>
+                <Text style={styles.getTheBook}>Get the book</Text>
+                <Text style={styles.supportAppreciated}>
+                  Your support is appreciated
+                </Text>
+              </View>
+              <Icon name="book" color="white" size={60} style={styles.icon} />
+            </View>
+          </TouchableHighlight>
         </ScrollView>
       </View>
     );

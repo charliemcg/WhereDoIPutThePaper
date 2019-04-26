@@ -24,10 +24,10 @@ export default {
   //   fontWeight: "bold",
   //   textAlign: "center"
   // },
-  iconWrapper: {
-    width: "20%",
-    justifyContent: "center"
-  },
+  // iconWrapper: {
+  //   width: "20%",
+  //   justifyContent: "center"
+  // },
   countryWrapper: {
     height: "25%",
     flexDirection: "row",
@@ -55,5 +55,31 @@ export default {
     fontSize: 20,
     color: "#ddd",
     padding: 10
-  }
+  },
+  bookButton: {
+    backgroundColor: "#00f",
+    marginLeft: 20,
+    marginRight: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderWidth: 1,
+    borderColor: "white",
+    borderStyle: "solid"
+  },
+  getBookWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-around"
+  },
+  textWrapper: {},
+  getTheBook: {
+    color: "white",
+    fontSize: 30,
+    textAlign: "center"
+  },
+  supportAppreciated: {
+    color: "white",
+    fontSize: 15,
+    textAlign: "center"
+  },
+  icon: {}
 };
