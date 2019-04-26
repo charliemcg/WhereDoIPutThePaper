@@ -5,13 +5,18 @@ import {
   Text,
   ScrollView,
   Alert,
+  ActivityIndicator,
   TouchableHighlight,
   Button,
   Linking
 } from "react-native";
 import styles from "../styles/homeStyles";
 import { connect } from "react-redux";
+import DeviceInfo from "react-native-device-info";
 import Picker from "./Picker";
+import { changeCountry } from "../actions/actions";
+import { countries } from "../countryList";
+import AsyncStorage from "@react-native-community/async-storage";
 import hamburgerImg from "../images/hamburger.png";
 
 //<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
@@ -23,20 +28,41 @@ class Home extends Component {
       console.error("An error occurred", err)
     );
   };
+
+  componentWillMount() {
+    //get persisted country from AsyncStorage
+    this.getCountryFromDevice();
+  }
+
+  getCountryFromDevice = async () => {
+    try {
+      const value = await AsyncStorage.getItem("COUNTRY");
+      if (value !== null) {
+        this.props.changeCountry(value);
+      } else {
+        const countryCode = DeviceInfo.getDeviceCountry();
+        for (let i = 0; i < countries.length; i++) {
+          if (countryCode === countries[i].flag) {
+            this.props.changeCountry(countries[i].name);
+          }
+        }
+        if (this.props.name === null) {
+          this.props.changeCountry(countries[0].name);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   render() {
     const flagImgUrl =
       "https://www.countryflags.io/" + this.props.flag + "/shiny/64.png";
-    return (
-      <View style={styles.parent}>
-        <View style={styles.titleWrapper}>
-          <Text style={styles.title}>Where Do I Put The Paper?</Text>
-        </View>
-        <TouchableHighlight
-          style={styles.hamburger}
-          onPress={() => this.props.navigation.toggleDrawer()}
-        >
-          <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-        </TouchableHighlight>
+
+    const getCountryView =
+      this.props.name === null ? (
+        <ActivityIndicator size="large" />
+      ) : (
         <View style={styles.countryWrapper}>
           <View style={styles.flag}>
             {/* check for when internet is down and cannot retrieve flag */}
@@ -49,6 +75,20 @@ class Home extends Component {
             <Picker />
           </View>
         </View>
+      );
+
+    return (
+      <View style={styles.parent}>
+        <View style={styles.titleWrapper}>
+          <Text style={styles.title}>Where Do I Put The Paper?</Text>
+        </View>
+        <TouchableHighlight
+          style={styles.hamburger}
+          onPress={() => this.props.navigation.toggleDrawer()}
+        >
+          <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
+        </TouchableHighlight>
+        {getCountryView}
         <ScrollView style={styles.descriptionScroll}>
           <View style={styles.descriptionWrapper}>
             <Text style={styles.description}>{this.props.description}</Text>
@@ -69,4 +109,15 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = dispatch => {
+  return {
+    changeCountry: country => {
+      dispatch(changeCountry(country));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
