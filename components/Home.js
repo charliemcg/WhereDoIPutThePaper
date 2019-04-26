@@ -5,7 +5,9 @@ import {
   Text,
   ScrollView,
   Alert,
-  TouchableHighlight
+  TouchableHighlight,
+  Button,
+  Linking
 } from "react-native";
 import styles from "../styles/homeStyles";
 import { connect } from "react-redux";
@@ -15,6 +17,12 @@ import hamburgerImg from "../images/hamburger.png";
 //<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 class Home extends Component {
+  handlePress = () => {
+    // inform user of error
+    Linking.openURL(this.props.link).catch(err =>
+      console.error("An error occurred", err)
+    );
+  };
   render() {
     const flagImgUrl =
       "https://www.countryflags.io/" + this.props.flag + "/shiny/64.png";
@@ -45,6 +53,7 @@ class Home extends Component {
           <View style={styles.descriptionWrapper}>
             <Text style={styles.description}>{this.props.description}</Text>
           </View>
+          <Button onPress={this.handlePress} title="Get the book" />
         </ScrollView>
       </View>
     );
@@ -55,7 +64,8 @@ const mapStateToProps = state => {
   return {
     name: state.name,
     flag: state.flag,
-    description: state.description
+    description: state.description,
+    link: state.link
   };
 };
 
