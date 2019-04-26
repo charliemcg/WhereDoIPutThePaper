@@ -3,12 +3,13 @@ import {
   View,
   Text,
   Button,
-  Linking,
-  TouchableHighlight,
-  Image
+  Linking
+  // TouchableHighlight,
+  // Image
 } from "react-native";
 import styles from "../styles/twinningStyles";
-import hamburgerImg from "../images/hamburger.png";
+// import hamburgerImg from "../images/hamburger.png";
+import TitleBar from "./TitleBar";
 
 const URL = "http://www.toilettwinning.org";
 
@@ -20,7 +21,7 @@ class Twinning extends Component {
   render() {
     return (
       <View style={styles.parent}>
-        <View style={styles.titleWrapper}>
+        {/* <View style={styles.titleWrapper}>
           <Text style={styles.title}>Toilet Twinning</Text>
         </View>
         <TouchableHighlight
@@ -28,7 +29,12 @@ class Twinning extends Component {
           onPress={() => this.props.navigation.toggleDrawer()}
         >
           <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-        </TouchableHighlight>
+        </TouchableHighlight> */}
+        <TitleBar
+          toggle={() => {
+            this.props.navigation.toggleDrawer();
+          }}
+        />
         <View style={styles.aboutWrapper}>
           <Text style={styles.about}>
             As I was fiddling about with this site again, it occurred to me how

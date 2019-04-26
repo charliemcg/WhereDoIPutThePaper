@@ -452,7 +452,8 @@ export const countries = [
     flag: "SZ",
     description:
       "You'll be using long-drops more often than not in Eswatini. And more often and not you can throw paper into the hole. Use a bin if provided as this will help prevent too much pollution.",
-    link: ""
+    link:
+      "https://www.amazon.co.uk/gp/product/1743210108/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1743210108&linkCode=as2&tag=noelectextrep-21"
   },
   {
     name: "Ethiopia",
@@ -556,7 +557,7 @@ export const countries = [
     description:
       "In common with much of west Africa you'll be cleaning up with your hand in Guinea (make sure it's your left hand) and water from a colourful teapot provided if you're living like the locals. If you're using paper, use a bin of provided, if not, dispose of it sensibly. You can't flush the paper.",
     link:
-      "https://www.amazon.co.uk/gp/product/1841629251/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1841629251&linkCode=as2&tag=noelectextrep-21"
+      "https://www.amazon.co.uk/gp/product/B00F076V1K/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00F076V1K&linkCode=as2&tag=noelectextrep-21"
   },
   {
     name: "Guinea-Bissau",

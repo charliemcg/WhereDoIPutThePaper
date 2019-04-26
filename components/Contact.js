@@ -14,6 +14,7 @@ import webImg from "../images/web.png";
 import emailImg from "../images/email.png";
 import hamburgerImg from "../images/hamburger.png";
 import email from "react-native-email";
+import TitleBar from "./TitleBar";
 
 const TWITTER_URL =
   "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
@@ -48,17 +49,8 @@ class Contact extends Component {
   render() {
     return (
       <View>
-        {/* <View style={styles.titleWrapper}>
-          <Text style={styles.title}>Contact</Text>
-        </View>
-        <TouchableHighlight
-          style={styles.hamburger}
-          onPress={() => this.props.navigation.toggleDrawer()}
-        >
-          <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-        </TouchableHighlight> */}
         <View style={styles.parent}>
-          <View style={styles.titleWrapper}>
+          {/* <View style={styles.titleWrapper}>
             <Text style={styles.title}>Contact</Text>
           </View>
           <TouchableHighlight
@@ -66,7 +58,12 @@ class Contact extends Component {
             onPress={() => this.props.navigation.toggleDrawer()}
           >
             <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-          </TouchableHighlight>
+          </TouchableHighlight> */}
+          <TitleBar
+            toggle={() => {
+              this.props.navigation.toggleDrawer();
+            }}
+          />
           <View style={styles.contactWrapper}>
             <View style={styles.website}>
               <TouchableHighlight onPress={() => this.handleWebsite()}>
@@ -96,7 +93,6 @@ class Contact extends Component {
               </TouchableHighlight>
             </View>
             <View style={styles.credit}>
-              {/* <Text style={styles.text}>Credit</Text> */}
               <Text style={styles.text}>
                 Some Dude - {new Date().getFullYear()}
               </Text>

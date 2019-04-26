@@ -4,12 +4,13 @@ import {
   Text,
   ScrollView,
   Button,
-  Linking,
-  TouchableHighlight,
-  Image
+  Linking
+  // TouchableHighlight,
+  // Image
 } from "react-native";
 import styles from "../styles/aboutStyles";
-import hamburgerImg from "../images/hamburger.png";
+// import hamburgerImg from "../images/hamburger.png";
+import TitleBar from "./TitleBar";
 
 const URL =
   "https://www.amazon.co.uk/s?k=travel+guide&linkCode=sl2&linkId=eb60e7e2dfa44e8d2215447ead78ca11&tag=noelectextrep-21&ref=as_li_ss_tl";
@@ -22,7 +23,7 @@ class About extends Component {
   render() {
     return (
       <View style={styles.parent}>
-        <View style={styles.titleWrapper}>
+        {/* <View style={styles.titleWrapper}>
           <Text style={styles.title}>About</Text>
         </View>
         <TouchableHighlight
@@ -30,7 +31,12 @@ class About extends Component {
           onPress={() => this.props.navigation.toggleDrawer()}
         >
           <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-        </TouchableHighlight>
+        </TouchableHighlight> */}
+        <TitleBar
+          toggle={() => {
+            this.props.navigation.toggleDrawer();
+          }}
+        />
         <ScrollView style={styles.scrollWrapper}>
           <Text style={styles.about}>
             I recently spent a few months travelling around South America and

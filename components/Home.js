@@ -6,7 +6,7 @@ import {
   ScrollView,
   Alert,
   ActivityIndicator,
-  TouchableHighlight,
+  // TouchableHighlight,
   Button,
   Linking
 } from "react-native";
@@ -17,7 +17,8 @@ import Picker from "./Picker";
 import { changeCountry } from "../actions/actions";
 import { countries } from "../countryList";
 import AsyncStorage from "@react-native-community/async-storage";
-import hamburgerImg from "../images/hamburger.png";
+// import hamburgerImg from "../images/hamburger.png";
+import TitleBar from "./TitleBar";
 
 //<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
@@ -79,7 +80,7 @@ class Home extends Component {
 
     return (
       <View style={styles.parent}>
-        <View style={styles.titleWrapper}>
+        {/* <View style={styles.titleBarWrapper}>
           <Text style={styles.title}>Where Do I Put The Paper?</Text>
         </View>
         <TouchableHighlight
@@ -87,7 +88,12 @@ class Home extends Component {
           onPress={() => this.props.navigation.toggleDrawer()}
         >
           <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-        </TouchableHighlight>
+        </TouchableHighlight> */}
+        <TitleBar
+          toggle={() => {
+            this.props.navigation.toggleDrawer();
+          }}
+        />
         {getCountryView}
         <ScrollView style={styles.descriptionScroll}>
           <View style={styles.descriptionWrapper}>

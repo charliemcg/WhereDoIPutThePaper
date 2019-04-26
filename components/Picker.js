@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { countries } from "../countryList";
-// import { Dropdown } from "react-native-material-dropdown";
-// import "react-dropdown/style.css";
 import { connect } from "react-redux";
 import { changeCountry } from "../actions/actions";
 import { Picker } from "react-native";
@@ -12,10 +10,6 @@ class CountryPicker extends Component {
     this.props.changeCountry(event);
   };
   render() {
-    // let countryArr = [];
-    // for (let i = 0; i < countries.length; i++) {
-    //   countryArr.push({ value: countries[i].name });
-    // }
     const pickerItems = countries.map(country => {
       return (
         <Picker.Item
@@ -25,21 +19,7 @@ class CountryPicker extends Component {
         />
       );
     });
-    // const pickerItems = <Picker.Item label="Bloody" value="Bloomin" />;
     return (
-      // <Picker
-      //   label="Country"
-      //   fontSize={20}
-      //   baseColor="#ddd"
-      //   textColor="#fff"
-      //   selectedItemColor="#000"
-      //   animationDuration={0}
-      //   itemPadding={3}
-      //   data={countryArr}
-      //   value={this.props.name}
-      //   itemCount={8}
-      //   onChangeText={value => this.handleChange(value)}
-      // />
       <Picker
         selectedValue={this.props.name}
         style={styles.picker}

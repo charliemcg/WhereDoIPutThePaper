@@ -1,40 +1,8 @@
-import {
-  createAppContainer,
-  createDrawerNavigator,
-  createStackNavigator
-} from "react-navigation";
+import { createAppContainer, createDrawerNavigator } from "react-navigation";
 import Home from "./Home";
 import About from "./About";
 import Twinning from "./Twinning";
 import Contact from "./Contact";
-
-// const navOptions = title => {
-//   return {
-//     title,
-//     headerStyle: { backgroundColor: "#6200EE" },
-//     headerTitleStyle: { color: "#ff0" },
-//     headerTintColor: "#ffffff"
-//   };
-// };
-
-// const Stack = createStackNavigator({
-//   Home: {
-//     screen: Home,
-//     navigationOptions: navOptions("Where Do I Put The Paper?")
-//   },
-//   About: {
-//     screen: About,
-//     navigationOptions: navOptions("About")
-//   },
-//   Twinning: {
-//     screen: Twinning,
-//     navigationOptions: navOptions("Toilet Twinning")
-//   },
-//   Contact: {
-//     screen: Contact,
-//     navigationOptions: navOptions("Contact")
-//   }
-// });
 
 const Navigator = createDrawerNavigator(
   {

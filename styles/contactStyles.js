@@ -2,10 +2,6 @@ export default {
   parent: {
     width: "100%",
     height: "100%",
-    // paddingTop: 50,
-    // paddingBottom: 60,
-    // paddingLeft: 30,
-    // paddingRight: 30,
     backgroundColor: "#444"
   },
   contactWrapper: {
@@ -95,21 +91,14 @@ export default {
     marginTop: 40,
     marginBottom: 10,
     justifyContent: "center"
-    // borderStyle: "solid",
-    // borderColor: "#ddd",
-    // borderWidth: 1
   },
   social: {
     flexDirection: "row",
     justifyContent: "space-around",
     height: "10%",
-    // marginTop: 10,
     marginBottom: 10,
     marginLeft: 30,
     marginRight: 30
-    // borderStyle: "solid",
-    // borderColor: "#ddd",
-    // borderWidth: 1
   },
   facebook: {
     justifyContent: "center"
