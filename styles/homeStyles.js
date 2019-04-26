@@ -60,6 +60,7 @@ export default {
     backgroundColor: "#00f",
     marginLeft: 20,
     marginRight: 20,
+    marginBottom: 20,
     paddingTop: 10,
     paddingBottom: 10,
     borderWidth: 1,
@@ -70,7 +71,6 @@ export default {
     flexDirection: "row",
     justifyContent: "space-around"
   },
-  textWrapper: {},
   getTheBook: {
     color: "white",
     fontSize: 30,
@@ -80,6 +80,5 @@ export default {
     color: "white",
     fontSize: 15,
     textAlign: "center"
-  },
-  icon: {}
+  }
 };

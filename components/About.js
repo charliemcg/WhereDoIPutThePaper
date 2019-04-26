@@ -4,13 +4,14 @@ import {
   Text,
   ScrollView,
   Button,
-  Linking
-  // TouchableHighlight,
+  Linking,
+  TouchableHighlight
   // Image
 } from "react-native";
 import styles from "../styles/aboutStyles";
 // import hamburgerImg from "../images/hamburger.png";
 import TitleBar from "./TitleBar";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const URL =
   "https://www.amazon.co.uk/s?k=travel+guide&linkCode=sl2&linkId=eb60e7e2dfa44e8d2215447ead78ca11&tag=noelectextrep-21&ref=as_li_ss_tl";
@@ -75,13 +76,27 @@ class About extends Component {
             locally, follow them. I don't want to be held responsible for an
             international incident if you bung up the bog somewhere posh.
           </Text>
-          <View style={styles.buttonWrapper}>
+          {/* <View style={styles.buttonWrapper}>
             <Button
               color="#bb86fc"
               onPress={this.handlePress}
               title="Guide books"
             />
-          </View>
+          </View> */}
+          <TouchableHighlight
+            onPress={this.handlePress}
+            style={styles.bookButton}
+          >
+            <View style={styles.getBookWrapper}>
+              <View>
+                <Text style={styles.getTheBook}>Guide books</Text>
+                <Text style={styles.supportAppreciated}>
+                  Your support is appreciated
+                </Text>
+              </View>
+              <Icon name="book" color="white" size={60} />
+            </View>
+          </TouchableHighlight>
         </ScrollView>
       </View>
     );

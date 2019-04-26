@@ -101,19 +101,18 @@ class Home extends Component {
           <View style={styles.descriptionWrapper}>
             <Text style={styles.description}>{this.props.description}</Text>
           </View>
-          {/* <Button onPress={this.handlePress} title="Get the book" /> */}
           <TouchableHighlight
             onPress={this.handlePress}
             style={styles.bookButton}
           >
             <View style={styles.getBookWrapper}>
-              <View style={styles.textWrapper}>
+              <View>
                 <Text style={styles.getTheBook}>Get the book</Text>
                 <Text style={styles.supportAppreciated}>
                   Your support is appreciated
                 </Text>
               </View>
-              <Icon name="book" color="white" size={60} style={styles.icon} />
+              <Icon name="book" color="white" size={60} />
             </View>
           </TouchableHighlight>
         </ScrollView>

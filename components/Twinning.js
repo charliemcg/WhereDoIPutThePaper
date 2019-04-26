@@ -3,8 +3,8 @@ import {
   View,
   Text,
   Button,
-  Linking
-  // TouchableHighlight,
+  Linking,
+  TouchableHighlight
   // Image
 } from "react-native";
 import styles from "../styles/twinningStyles";
@@ -45,11 +45,17 @@ class Twinning extends Component {
           </Text>
         </View>
         <View style={styles.buttonWrapper}>
-          <Button
+          {/* <Button
             color="#bb86fc"
             onPress={this.handlePress}
             title="Go to website"
-          />
+          /> */}
+          <TouchableHighlight
+            onPress={this.handlePress}
+            style={styles.bookButton}
+          >
+            <Text style={styles.getTheBook}>Go To Website</Text>
+          </TouchableHighlight>
         </View>
       </View>
     );
