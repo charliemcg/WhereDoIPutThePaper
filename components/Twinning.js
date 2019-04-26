@@ -34,6 +34,7 @@ class Twinning extends Component {
           toggle={() => {
             this.props.navigation.toggleDrawer();
           }}
+          name="Toilet Twinning"
         />
         <View style={styles.aboutWrapper}>
           <Text style={styles.about}>

@@ -36,6 +36,7 @@ class About extends Component {
           toggle={() => {
             this.props.navigation.toggleDrawer();
           }}
+          name="About"
         />
         <ScrollView style={styles.scrollWrapper}>
           <Text style={styles.about}>

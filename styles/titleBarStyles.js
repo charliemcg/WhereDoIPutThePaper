@@ -1,15 +1,14 @@
 export default {
   titleBarWrapper: {
-    height: "15%",
+    height: "10%",
     width: "100%",
-    justifyContent: "center",
-    backgroundColor: "#6200ee"
+    alignItems: "center",
+    backgroundColor: "#6200ee",
+    flexDirection: "row"
   },
   hamburger: {
-    position: "absolute",
-    height: "15%",
-    justifyContent: "center",
-    marginLeft: 5
+    width: 35,
+    padding: 5
   },
   title: {
     position: "absolute",

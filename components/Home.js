@@ -93,6 +93,7 @@ class Home extends Component {
           toggle={() => {
             this.props.navigation.toggleDrawer();
           }}
+          name="Where Do I Put The Paper?"
         />
         {getCountryView}
         <ScrollView style={styles.descriptionScroll}>

@@ -6,10 +6,8 @@ import hamburgerImg from "../images/hamburger.png";
 class TitleBar extends Component {
   render() {
     return (
-      <View>
-        <View style={styles.titleBarWrapper}>
-          <Text style={styles.title}>Where Do I Put The Paper?</Text>
-        </View>
+      <View style={styles.titleBarWrapper}>
+        <Text style={styles.title}>{this.props.name}</Text>
         <TouchableHighlight
           style={styles.hamburger}
           onPress={this.props.toggle}

@@ -12,7 +12,7 @@ import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
 import webImg from "../images/web.png";
 import emailImg from "../images/email.png";
-import hamburgerImg from "../images/hamburger.png";
+// import hamburgerImg from "../images/hamburger.png";
 import email from "react-native-email";
 import TitleBar from "./TitleBar";
 
@@ -63,6 +63,7 @@ class Contact extends Component {
             toggle={() => {
               this.props.navigation.toggleDrawer();
             }}
+            name="Contact"
           />
           <View style={styles.contactWrapper}>
             <View style={styles.website}>
