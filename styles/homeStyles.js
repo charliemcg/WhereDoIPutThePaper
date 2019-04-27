@@ -9,7 +9,8 @@ export default {
   countryWrapper: {
     height: "20%",
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: colors.light
   },
   flag: {
     justifyContent: "center"

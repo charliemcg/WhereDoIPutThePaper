@@ -3,6 +3,7 @@ import Home from "./Home";
 import About from "./About";
 import Twinning from "./Twinning";
 import Contact from "./Contact";
+import colors from "../colors";
 
 const Navigator = createDrawerNavigator(
   {
@@ -32,12 +33,19 @@ const Navigator = createDrawerNavigator(
     }
   },
   {
-    drawerBackgroundColor: "#444",
+    // drawerBackgroundColor: "#444",
+    // contentOptions: {
+    //   activeTintColor: "#ddd",
+    //   inactiveTintColor: "#ddd",
+    //   activeBackgroundColor: "#666",
+    //   inactiveBackgroundColor: "#444"
+    // }
+    drawerBackgroundColor: colors.notQuiteWhite,
     contentOptions: {
-      activeTintColor: "#ddd",
-      inactiveTintColor: "#ddd",
-      activeBackgroundColor: "#666",
-      inactiveBackgroundColor: "#444"
+      activeTintColor: colors.notQuiteWhite,
+      inactiveTintColor: colors.notQuiteBlack,
+      activeBackgroundColor: colors.primary,
+      inactiveBackgroundColor: colors.notQuiteWhite
     }
   }
 );

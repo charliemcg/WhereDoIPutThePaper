@@ -2,7 +2,7 @@ import colors from "../colors";
 
 export default {
   picker: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.notQuiteWhite,
     color: colors.notQuiteBlack
   }
 };
