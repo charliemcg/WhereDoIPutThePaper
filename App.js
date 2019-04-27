@@ -4,13 +4,14 @@ import { createStore } from "redux";
 import reducer from "./reducers/reducer";
 import NavContainer from "./components/NavContainer";
 import { Platform, StatusBar, View } from "react-native";
+import colors from "./colors";
 
 const store = createStore(reducer);
 
 const MyStatusBar = ({ backgroundColor, ...props }) => (
   <View
     style={{
-      backgroundColor: "#3700b3",
+      backgroundColor: colors.dark,
       height: Platform.OS === "ios" ? 0 : StatusBar.currentHeight
     }}
   >

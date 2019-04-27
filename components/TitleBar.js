@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { View, TouchableHighlight, Text, Image } from "react-native";
+import { View, TouchableHighlight, Text } from "react-native";
 import styles from "../styles/titleBarStyles";
-import hamburgerImg from "../images/hamburger.png";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import colors from "../colors";
 
 class TitleBar extends Component {
   render() {
@@ -12,7 +13,7 @@ class TitleBar extends Component {
           style={styles.hamburger}
           onPress={this.props.toggle}
         >
-          <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
+          <Icon name="menu" color={colors.notQuiteWhite} size={30} />
         </TouchableHighlight>
       </View>
     );

@@ -1,15 +1,8 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  Button,
-  Linking,
-  TouchableHighlight
-  // Image
-} from "react-native";
+import { View, Text, Linking, TouchableHighlight } from "react-native";
 import styles from "../styles/twinningStyles";
-// import hamburgerImg from "../images/hamburger.png";
 import TitleBar from "./TitleBar";
+import colors from "../colors";
 
 const URL = "http://www.toilettwinning.org";
 
@@ -21,15 +14,6 @@ class Twinning extends Component {
   render() {
     return (
       <View style={styles.parent}>
-        {/* <View style={styles.titleWrapper}>
-          <Text style={styles.title}>Toilet Twinning</Text>
-        </View>
-        <TouchableHighlight
-          style={styles.hamburger}
-          onPress={() => this.props.navigation.toggleDrawer()}
-        >
-          <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-        </TouchableHighlight> */}
         <TitleBar
           toggle={() => {
             this.props.navigation.toggleDrawer();
@@ -45,16 +29,12 @@ class Twinning extends Component {
           </Text>
         </View>
         <View style={styles.buttonWrapper}>
-          {/* <Button
-            color="#bb86fc"
-            onPress={this.handlePress}
-            title="Go to website"
-          /> */}
           <TouchableHighlight
             onPress={this.handlePress}
-            style={styles.bookButton}
+            style={styles.theButton}
+            underlayColor={colors.light}
           >
-            <Text style={styles.getTheBook}>Go To Website</Text>
+            <Text style={styles.goToWebsite}>Go To Website</Text>
           </TouchableHighlight>
         </View>
       </View>

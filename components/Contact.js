@@ -10,12 +10,10 @@ import {
 import styles from "../styles/contactStyles";
 import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
-import webImg from "../images/web.png";
-import emailImg from "../images/email.png";
-// import hamburgerImg from "../images/hamburger.png";
 import email from "react-native-email";
 import TitleBar from "./TitleBar";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import colors from "../colors";
 
 const TWITTER_URL =
   "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
@@ -51,15 +49,6 @@ class Contact extends Component {
     return (
       <View>
         <View style={styles.parent}>
-          {/* <View style={styles.titleWrapper}>
-            <Text style={styles.title}>Contact</Text>
-          </View>
-          <TouchableHighlight
-            style={styles.hamburger}
-            onPress={() => this.props.navigation.toggleDrawer()}
-          >
-            <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-          </TouchableHighlight> */}
           <TitleBar
             toggle={() => {
               this.props.navigation.toggleDrawer();
@@ -68,29 +57,30 @@ class Contact extends Component {
           />
           <View style={styles.contactWrapper}>
             <View style={styles.website}>
-              <TouchableHighlight onPress={() => this.handleWebsite()}>
+              <TouchableHighlight
+                onPress={() => this.handleWebsite()}
+                underlayColor={colors.light}
+              >
                 <View style={styles.webTouchWrapper}>
                   <View style={styles.webTextWrapper}>
                     <Text style={styles.webText}>View in web</Text>
                   </View>
                   <View style={styles.webImgWrapper}>
-                    {/* <Image style={styles.webImg} source={webImg} /> */}
                     <Icon name="web" color="white" size={60} />
                   </View>
                 </View>
               </TouchableHighlight>
             </View>
             <View style={styles.email}>
-              <TouchableHighlight onPress={() => this.handleEmail()}>
+              <TouchableHighlight
+                onPress={() => this.handleEmail()}
+                underlayColor={colors.light}
+              >
                 <View style={styles.emailTouchWrapper}>
                   <View style={styles.emailTextWrapper}>
                     <Text style={styles.emailText}>Email</Text>
                   </View>
                   <View style={styles.emailImgWrapper}>
-                    {/* <Image
-                      style={{ width: 50, height: 50 }}
-                      source={emailImg}
-                    /> */}
                     <Icon name="email-outline" color="white" size={60} />
                   </View>
                 </View>

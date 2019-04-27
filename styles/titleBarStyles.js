@@ -1,9 +1,11 @@
+import colors from "../colors";
+
 export default {
   titleBarWrapper: {
     height: "10%",
     width: "100%",
     alignItems: "center",
-    backgroundColor: "#6200ee",
+    backgroundColor: colors.primary,
     flexDirection: "row"
   },
   hamburger: {
@@ -13,9 +15,18 @@ export default {
   title: {
     position: "absolute",
     width: "100%",
-    fontSize: 20,
-    color: "#fff",
+    fontSize: 25,
+    color: colors.notQuiteWhite,
     fontWeight: "bold",
     textAlign: "center"
+  },
+  paperWrapper: {
+    position: "absolute",
+    width: "100%",
+    alignItems: "flex-end"
+  },
+  paperImg: {
+    height: 90,
+    width: 0
   }
 };

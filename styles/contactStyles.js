@@ -1,8 +1,10 @@
+import colors from "../colors";
+
 export default {
   parent: {
     width: "100%",
     height: "100%",
-    backgroundColor: "#444"
+    backgroundColor: colors.notQuiteWhite
   },
   contactWrapper: {
     paddingLeft: 30,
@@ -14,9 +16,9 @@ export default {
   website: {
     height: "15%",
     borderStyle: "solid",
-    borderColor: "#aaa",
+    borderColor: colors.dark,
     borderWidth: 1,
-    backgroundColor: "#666"
+    backgroundColor: colors.primary
   },
   webTouchWrapper: {
     height: "100%",
@@ -27,8 +29,8 @@ export default {
     width: "70%"
   },
   webText: {
-    color: "#ddd",
-    fontSize: 20,
+    color: colors.notQuiteWhite,
+    fontSize: 25,
     textAlign: "center"
   },
   webImgWrapper: {
@@ -42,11 +44,10 @@ export default {
   email: {
     height: "15%",
     borderStyle: "solid",
-    borderColor: "#ddd",
+    borderColor: colors.dark,
     borderWidth: 1,
-    borderColor: "#aaa",
-    borderWidth: 1,
-    backgroundColor: "#666"
+
+    backgroundColor: colors.primary
   },
   emailTouchWrapper: {
     height: "100%",
@@ -57,8 +58,8 @@ export default {
     width: "70%"
   },
   emailText: {
-    color: "#ddd",
-    fontSize: 20,
+    color: colors.notQuiteWhite,
+    fontSize: 25,
     textAlign: "center"
   },
   emailImgWrapper: {
@@ -89,7 +90,7 @@ export default {
     justifyContent: "center"
   },
   text: {
-    color: "#ddd",
+    color: colors.notQuiteBlack,
     fontSize: 15,
     textAlign: "center"
   }

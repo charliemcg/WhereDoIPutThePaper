@@ -1,8 +1,8 @@
+import colors from "../colors";
+
 export default {
   picker: {
-    backgroundColor: "#666",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#fff"
+    backgroundColor: colors.light,
+    color: colors.notQuiteBlack
   }
 };

@@ -7,7 +7,6 @@ import {
   Alert,
   ActivityIndicator,
   TouchableHighlight,
-  Button,
   Linking
 } from "react-native";
 import styles from "../styles/homeStyles";
@@ -17,11 +16,9 @@ import Picker from "./Picker";
 import { changeCountry } from "../actions/actions";
 import { countries } from "../countryList";
 import AsyncStorage from "@react-native-community/async-storage";
-// import hamburgerImg from "../images/hamburger.png";
 import TitleBar from "./TitleBar";
 import Icon from "react-native-vector-icons/FontAwesome";
-
-//<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+import colors from "../colors";
 
 class Home extends Component {
   handlePress = () => {
@@ -81,15 +78,6 @@ class Home extends Component {
 
     return (
       <View style={styles.parent}>
-        {/* <View style={styles.titleBarWrapper}>
-          <Text style={styles.title}>Where Do I Put The Paper?</Text>
-        </View>
-        <TouchableHighlight
-          style={styles.hamburger}
-          onPress={() => this.props.navigation.toggleDrawer()}
-        >
-          <Image style={{ width: 25, height: 25 }} source={hamburgerImg} />
-        </TouchableHighlight> */}
         <TitleBar
           toggle={() => {
             this.props.navigation.toggleDrawer();
@@ -101,21 +89,22 @@ class Home extends Component {
           <View style={styles.descriptionWrapper}>
             <Text style={styles.description}>{this.props.description}</Text>
           </View>
-          <TouchableHighlight
-            onPress={this.handlePress}
-            style={styles.bookButton}
-          >
-            <View style={styles.getBookWrapper}>
-              <View>
-                <Text style={styles.getTheBook}>Get the book</Text>
-                <Text style={styles.supportAppreciated}>
-                  Your support is appreciated
-                </Text>
-              </View>
-              <Icon name="book" color="white" size={60} />
-            </View>
-          </TouchableHighlight>
         </ScrollView>
+        <TouchableHighlight
+          onPress={this.handlePress}
+          style={styles.bookButton}
+          underlayColor={colors.light}
+        >
+          <View style={styles.getBookWrapper}>
+            <View>
+              <Text style={styles.getTheBook}>Get the book</Text>
+              <Text style={styles.supportAppreciated}>
+                Your support is appreciated
+              </Text>
+            </View>
+            <Icon name="book" color={colors.notQuiteWhite} size={60} />
+          </View>
+        </TouchableHighlight>
       </View>
     );
   }
