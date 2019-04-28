@@ -12,6 +12,7 @@ class TitleBar extends Component {
         <TouchableHighlight
           style={styles.hamburger}
           onPress={this.props.toggle}
+          underlayColor={colors.primary}
         >
           <Icon name="menu" color={colors.notQuiteWhite} size={30} />
         </TouchableHighlight>

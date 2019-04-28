@@ -6,7 +6,8 @@ export default {
     width: "100%",
     alignItems: "center",
     backgroundColor: colors.primary,
-    flexDirection: "row"
+    flexDirection: "row",
+    elevation: 10
   },
   hamburger: {
     width: 35,

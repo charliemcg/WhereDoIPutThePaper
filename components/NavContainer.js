@@ -7,6 +7,12 @@ import colors from "../colors";
 
 const Navigator = createDrawerNavigator(
   {
+    Twinning: {
+      screen: Twinning,
+      navigationOptions: {
+        drawerLabel: "Contribute to Toilet Twinning"
+      }
+    },
     Home: {
       screen: Home,
       navigationOptions: {
@@ -17,12 +23,6 @@ const Navigator = createDrawerNavigator(
       screen: About,
       navigationOptions: {
         drawerLabel: "About"
-      }
-    },
-    Twinning: {
-      screen: Twinning,
-      navigationOptions: {
-        drawerLabel: "Contribute to Toilet Twinning"
       }
     },
     Contact: {

@@ -71,7 +71,9 @@ class Home extends Component {
             />
           </View>
           <View style={styles.dropDown}>
-            <Picker />
+            <View style={styles.bottomBorder}>
+              <Picker />
+            </View>
           </View>
         </View>
       );
