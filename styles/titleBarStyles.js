@@ -5,7 +5,6 @@ export default {
     height: "10%",
     width: "100%",
     alignItems: "center",
-    backgroundColor: colors.primary,
     flexDirection: "row",
     elevation: 10
   },
@@ -16,18 +15,9 @@ export default {
   title: {
     position: "absolute",
     width: "100%",
-    fontSize: 25,
+    fontSize: 20,
     color: colors.notQuiteWhite,
     fontWeight: "bold",
     textAlign: "center"
-  },
-  paperWrapper: {
-    position: "absolute",
-    width: "100%",
-    alignItems: "flex-end"
-  },
-  paperImg: {
-    height: 90,
-    width: 0
   }
 };

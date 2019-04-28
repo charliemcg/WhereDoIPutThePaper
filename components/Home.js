@@ -19,6 +19,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import TitleBar from "./TitleBar";
 import Icon from "react-native-vector-icons/FontAwesome";
 import colors from "../colors";
+import LinearGradient from "react-native-linear-gradient";
 
 class Home extends Component {
   handlePress = () => {
@@ -94,18 +95,22 @@ class Home extends Component {
         </ScrollView>
         <TouchableHighlight
           onPress={this.handlePress}
-          style={styles.bookButton}
           underlayColor={colors.light}
         >
-          <View style={styles.getBookWrapper}>
-            <View>
-              <Text style={styles.getTheBook}>Get the book</Text>
-              <Text style={styles.supportAppreciated}>
-                Your support is appreciated
-              </Text>
+          <LinearGradient
+            colors={[colors.primary, colors.primary, colors.dark]}
+            style={styles.bookButton}
+          >
+            <View style={styles.getBookWrapper}>
+              <View>
+                <Text style={styles.getTheBook}>Get the book</Text>
+                <Text style={styles.supportAppreciated}>
+                  Your support is appreciated
+                </Text>
+              </View>
+              <Icon name="book" color={colors.notQuiteWhite} size={60} />
             </View>
-            <Icon name="book" color={colors.notQuiteWhite} size={60} />
-          </View>
+          </LinearGradient>
         </TouchableHighlight>
       </View>
     );

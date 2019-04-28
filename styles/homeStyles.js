@@ -10,7 +10,6 @@ export default {
     height: "20%",
     flexDirection: "row",
     justifyContent: "center",
-    // backgroundColor: colors.light,
     alignItems: "center",
     backgroundColor: "white",
     elevation: 10
@@ -44,7 +43,6 @@ export default {
     padding: 15
   },
   bookButton: {
-    backgroundColor: colors.primary,
     margin: 20,
     paddingTop: 10,
     paddingBottom: 10,

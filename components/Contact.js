@@ -14,6 +14,7 @@ import email from "react-native-email";
 import TitleBar from "./TitleBar";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../colors";
+import LinearGradient from "react-native-linear-gradient";
 
 const TWITTER_URL = "https://twitter.com";
 // "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
@@ -61,14 +62,18 @@ class Contact extends Component {
                 onPress={() => this.handleWebsite()}
                 underlayColor={colors.light}
               >
-                <View style={styles.webTouchWrapper}>
-                  <View style={styles.webTextWrapper}>
-                    <Text style={styles.webText}>View in web</Text>
+                <LinearGradient
+                  colors={[colors.primary, colors.primary, colors.dark]}
+                >
+                  <View style={styles.webTouchWrapper}>
+                    <View style={styles.webTextWrapper}>
+                      <Text style={styles.webText}>View in web</Text>
+                    </View>
+                    <View style={styles.webImgWrapper}>
+                      <Icon name="web" color="white" size={60} />
+                    </View>
                   </View>
-                  <View style={styles.webImgWrapper}>
-                    <Icon name="web" color="white" size={60} />
-                  </View>
-                </View>
+                </LinearGradient>
               </TouchableHighlight>
             </View>
             <View style={styles.email}>
@@ -76,14 +81,18 @@ class Contact extends Component {
                 onPress={() => this.handleEmail()}
                 underlayColor={colors.light}
               >
-                <View style={styles.emailTouchWrapper}>
-                  <View style={styles.emailTextWrapper}>
-                    <Text style={styles.emailText}>Email</Text>
+                <LinearGradient
+                  colors={[colors.primary, colors.primary, colors.dark]}
+                >
+                  <View style={styles.emailTouchWrapper}>
+                    <View style={styles.emailTextWrapper}>
+                      <Text style={styles.emailText}>Email</Text>
+                    </View>
+                    <View style={styles.emailImgWrapper}>
+                      <Icon name="email-outline" color="white" size={60} />
+                    </View>
                   </View>
-                  <View style={styles.emailImgWrapper}>
-                    <Icon name="email-outline" color="white" size={60} />
-                  </View>
-                </View>
+                </LinearGradient>
               </TouchableHighlight>
             </View>
             <View style={styles.credit}>

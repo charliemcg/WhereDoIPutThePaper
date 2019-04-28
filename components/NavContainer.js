@@ -7,12 +7,6 @@ import colors from "../colors";
 
 const Navigator = createDrawerNavigator(
   {
-    Twinning: {
-      screen: Twinning,
-      navigationOptions: {
-        drawerLabel: "Contribute to Toilet Twinning"
-      }
-    },
     Home: {
       screen: Home,
       navigationOptions: {
@@ -25,6 +19,12 @@ const Navigator = createDrawerNavigator(
         drawerLabel: "About"
       }
     },
+    Twinning: {
+      screen: Twinning,
+      navigationOptions: {
+        drawerLabel: "Contribute to Toilet Twinning"
+      }
+    },
     Contact: {
       screen: Contact,
       navigationOptions: {
@@ -33,13 +33,6 @@ const Navigator = createDrawerNavigator(
     }
   },
   {
-    // drawerBackgroundColor: "#444",
-    // contentOptions: {
-    //   activeTintColor: "#ddd",
-    //   inactiveTintColor: "#ddd",
-    //   activeBackgroundColor: "#666",
-    //   inactiveBackgroundColor: "#444"
-    // }
     drawerBackgroundColor: colors.notQuiteWhite,
     contentOptions: {
       activeTintColor: colors.notQuiteWhite,

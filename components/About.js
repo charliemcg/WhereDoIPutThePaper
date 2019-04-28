@@ -11,6 +11,7 @@ import styles from "../styles/aboutStyles";
 import TitleBar from "./TitleBar";
 import Icon from "react-native-vector-icons/FontAwesome";
 import colors from "../colors";
+import LinearGradient from "react-native-linear-gradient";
 
 const URL =
   "https://www.amazon.co.uk/s?k=travel+guide&linkCode=sl2&linkId=eb60e7e2dfa44e8d2215447ead78ca11&tag=noelectextrep-21&ref=as_li_ss_tl";
@@ -68,18 +69,22 @@ class About extends Component {
           </Text>
           <TouchableHighlight
             onPress={this.handlePress}
-            style={styles.bookButton}
             underlayColor={colors.light}
           >
-            <View style={styles.getBookWrapper}>
-              <View>
-                <Text style={styles.getTheBook}>Guide books</Text>
-                <Text style={styles.supportAppreciated}>
-                  Your support is appreciated
-                </Text>
+            <LinearGradient
+              colors={[colors.primary, colors.primary, colors.dark]}
+              style={styles.bookButton}
+            >
+              <View style={styles.getBookWrapper}>
+                <View>
+                  <Text style={styles.getTheBook}>Guide books</Text>
+                  <Text style={styles.supportAppreciated}>
+                    Your support is appreciated
+                  </Text>
+                </View>
+                <Icon name="book" color={colors.notQuiteWhite} size={60} />
               </View>
-              <Icon name="book" color={colors.notQuiteWhite} size={60} />
-            </View>
+            </LinearGradient>
           </TouchableHighlight>
         </ScrollView>
       </View>

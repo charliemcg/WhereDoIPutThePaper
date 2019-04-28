@@ -17,8 +17,7 @@ export default {
     height: "15%",
     borderStyle: "solid",
     borderColor: colors.dark,
-    borderWidth: 1,
-    backgroundColor: colors.primary
+    borderWidth: 1
   },
   webTouchWrapper: {
     height: "100%",
@@ -45,9 +44,7 @@ export default {
     height: "15%",
     borderStyle: "solid",
     borderColor: colors.dark,
-    borderWidth: 1,
-
-    backgroundColor: colors.primary
+    borderWidth: 1
   },
   emailTouchWrapper: {
     height: "100%",

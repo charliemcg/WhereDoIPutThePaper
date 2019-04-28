@@ -10,7 +10,8 @@ import {
 import styles from "../styles/twinningStyles";
 import TitleBar from "./TitleBar";
 import colors from "../colors";
-import zambiaImg from "../images/zambiaTwinning.png";
+import zambiaImg from "../images/zambiaTwinningFaded.png";
+import LinearGradient from "react-native-linear-gradient";
 
 const URL = "http://www.toilettwinning.org";
 
@@ -36,10 +37,8 @@ class Twinning extends Component {
             and make a difference. I've just bought a latrine in Liberia.
           </Text>
         </View>
-        {/* <View style={styles.imgWrapper}> */}
         <Image
           source={zambiaImg}
-          // resizeMode="center"
           style={{
             width: Dimensions.get("window").width,
             height: Dimensions.get("window").width * 0.6339
@@ -48,13 +47,16 @@ class Twinning extends Component {
         <View style={styles.buttonWrapper}>
           <TouchableHighlight
             onPress={this.handlePress}
-            style={styles.theButton}
             underlayColor={colors.light}
           >
-            <Text style={styles.goToWebsite}>Go To Website</Text>
+            <LinearGradient
+              colors={[colors.primary, colors.primary, colors.dark]}
+              style={styles.theButton}
+            >
+              <Text style={styles.goToWebsite}>Go To Website</Text>
+            </LinearGradient>
           </TouchableHighlight>
         </View>
-        {/* </View> */}
       </View>
     );
   }

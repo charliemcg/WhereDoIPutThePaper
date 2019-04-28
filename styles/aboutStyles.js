@@ -25,7 +25,6 @@ export default {
     justifyContent: "center"
   },
   bookButton: {
-    backgroundColor: colors.primary,
     marginLeft: 20,
     marginRight: 20,
     marginBottom: 20,
