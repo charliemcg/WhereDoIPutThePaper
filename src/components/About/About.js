@@ -10,6 +10,7 @@ import {
 import styles from "./styles";
 import TitleBar from "../TitleBar";
 import Icon from "react-native-vector-icons/FontAwesome";
+import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 
@@ -17,6 +18,23 @@ const URL =
   "https://www.amazon.co.uk/s?k=travel+guide&linkCode=sl2&linkId=eb60e7e2dfa44e8d2215447ead78ca11&tag=noelectextrep-21&ref=as_li_ss_tl";
 
 class About extends Component {
+  static navigationOptions = ({ navigation }) => {
+    //setting up the navigation header and hamburger button
+    return {
+      headerLeft: (
+        <HamburgerIcon
+          name="menu"
+          color={colors.notQuiteWhite}
+          size={35}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      ),
+      headerTintColor: colors.white,
+      headerStyle: {
+        backgroundColor: colors.primary
+      }
+    };
+  };
   handlePress = () => {
     // inform user of error
     Linking.openURL(URL).catch(err => console.error("An error occurred", err));
@@ -24,12 +42,12 @@ class About extends Component {
   render() {
     return (
       <View style={styles.parent}>
-        <TitleBar
+        {/* <TitleBar
           toggle={() => {
             this.props.navigation.toggleDrawer();
           }}
           name="About"
-        />
+        /> */}
         <ScrollView style={styles.scrollWrapper}>
           <Text style={styles.about}>
             I recently spent a few months travelling around South America and

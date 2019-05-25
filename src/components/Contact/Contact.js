@@ -13,6 +13,7 @@ import twitter from "../../images/twitter.png";
 import email from "react-native-email";
 import TitleBar from "../TitleBar";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 
@@ -24,6 +25,24 @@ const WEBSITE_URL = "http://wheredoiputthepaper.com";
 const EMAIL = "fakeemail@needrealemail.com";
 
 class Contact extends Component {
+  static navigationOptions = ({ navigation }) => {
+    //setting up the navigation header and hamburger button
+    return {
+      headerLeft: (
+        <HamburgerIcon
+          name="menu"
+          color={colors.notQuiteWhite}
+          size={35}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      ),
+      headerTintColor: colors.white,
+      headerStyle: {
+        backgroundColor: colors.primary
+      }
+    };
+  };
+
   handleTwitter = () => {
     // inform user of error
     Linking.openURL(TWITTER_URL).catch(err =>
@@ -50,12 +69,12 @@ class Contact extends Component {
     return (
       <View>
         <View style={styles.parent}>
-          <TitleBar
+          {/* <TitleBar
             toggle={() => {
               this.props.navigation.toggleDrawer();
             }}
             name="Contact"
-          />
+          /> */}
           <View style={styles.contactWrapper}>
             <View style={styles.website}>
               <TouchableHighlight

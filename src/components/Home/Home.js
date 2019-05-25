@@ -17,11 +17,30 @@ import { changeCountry } from "../../actions";
 import { countries } from "../../countryList";
 import AsyncStorage from "@react-native-community/async-storage";
 import TitleBar from "../TitleBar";
+import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icon from "react-native-vector-icons/FontAwesome";
 import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 
 class Home extends Component {
+  static navigationOptions = ({ navigation }) => {
+    //setting up the navigation header and hamburger button
+    return {
+      headerLeft: (
+        <HamburgerIcon
+          name="menu"
+          color={colors.notQuiteWhite}
+          size={35}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      ),
+      headerTintColor: colors.white,
+      headerStyle: {
+        backgroundColor: colors.primary
+      }
+    };
+  };
+
   handlePress = () => {
     // inform user of error
     Linking.openURL(this.props.link).catch(err =>
@@ -79,12 +98,12 @@ class Home extends Component {
 
     return (
       <View style={styles.parent}>
-        <TitleBar
+        {/* <TitleBar
           toggle={() => {
             this.props.navigation.toggleDrawer();
           }}
           name="Where Do I Put The Paper?"
-        />
+        /> */}
         {getCountryView}
         <ScrollView style={styles.descriptionScroll}>
           <View style={styles.descriptionWrapper}>
