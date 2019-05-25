@@ -3,12 +3,10 @@ import {
   View,
   Text,
   ScrollView,
-  Button,
   Linking,
   TouchableHighlight
 } from "react-native";
 import styles from "./styles";
-import TitleBar from "../TitleBar";
 import Icon from "react-native-vector-icons/FontAwesome";
 import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../../colors";
@@ -42,12 +40,6 @@ class About extends Component {
   render() {
     return (
       <View style={styles.parent}>
-        {/* <TitleBar
-          toggle={() => {
-            this.props.navigation.toggleDrawer();
-          }}
-          name="About"
-        /> */}
         <ScrollView style={styles.scrollWrapper}>
           <Text style={styles.about}>
             I recently spent a few months travelling around South America and

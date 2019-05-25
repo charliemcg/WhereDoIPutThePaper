@@ -1,11 +1,9 @@
-import React from "react";
-import { TouchableHighlight } from "react-native";
+import { Dimensions } from "react-native";
 import {
   createAppContainer,
   createDrawerNavigator,
   createStackNavigator
 } from "react-navigation";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Home from "../Home";
 import About from "../About";
 import Twinning from "../Twinning";
@@ -21,7 +19,11 @@ const HomeStack = createStackNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
-      headerTitle: "Where Do I Put The Paper"
+      headerTitle: "Where Do I Put The Paper?",
+      headerTitleStyle: {
+        fontSize: 17,
+        width: Dimensions.get("window").width
+      }
     }
   }
 });

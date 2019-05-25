@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { countries } from "../../countryList";
 import { connect } from "react-redux";
 import { changeCountry } from "../../actions";
-import styles from "./styles";
 import ModalSelector from "react-native-modal-selector";
 import colors from "../../colors";
 
@@ -22,7 +21,7 @@ class CountryPicker extends Component {
         onChange={value => this.handleChange(value.label)}
         style={{
           height: "100%",
-          width: "100%"
+          width: "90%"
         }}
         selectStyle={{
           height: "100%",

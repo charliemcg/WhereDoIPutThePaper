@@ -4,7 +4,6 @@ import {
   Image,
   Text,
   ScrollView,
-  Alert,
   ActivityIndicator,
   TouchableHighlight,
   Linking
@@ -16,7 +15,6 @@ import Picker from "../Picker";
 import { changeCountry } from "../../actions";
 import { countries } from "../../countryList";
 import AsyncStorage from "@react-native-community/async-storage";
-import TitleBar from "../TitleBar";
 import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icon from "react-native-vector-icons/FontAwesome";
 import colors from "../../colors";
@@ -98,12 +96,6 @@ class Home extends Component {
 
     return (
       <View style={styles.parent}>
-        {/* <TitleBar
-          toggle={() => {
-            this.props.navigation.toggleDrawer();
-          }}
-          name="Where Do I Put The Paper?"
-        /> */}
         {getCountryView}
         <ScrollView style={styles.descriptionScroll}>
           <View style={styles.descriptionWrapper}>

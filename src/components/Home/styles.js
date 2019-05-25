@@ -17,15 +17,14 @@ export default {
   flag: {
     position: "absolute",
     width: "30%",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center"
   },
   picker: {
     position: "absolute",
-    width: "68%",
+    width: "70%",
     right: 0,
-    height: "50%",
-    marginRight: "5%"
+    height: "50%"
   },
   descriptionScroll: {
     height: "60%"

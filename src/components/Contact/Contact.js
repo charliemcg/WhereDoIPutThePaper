@@ -69,12 +69,6 @@ class Contact extends Component {
     return (
       <View>
         <View style={styles.parent}>
-          {/* <TitleBar
-            toggle={() => {
-              this.props.navigation.toggleDrawer();
-            }}
-            name="Contact"
-          /> */}
           <View style={styles.contactWrapper}>
             <View style={styles.website}>
               <TouchableHighlight
