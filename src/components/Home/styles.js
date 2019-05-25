@@ -7,26 +7,25 @@ export default {
     backgroundColor: colors.notQuiteWhite
   },
   countryWrapper: {
-    height: "20%",
     flexDirection: "row",
-    justifyContent: "center",
+    backgroundColor: colors.white,
     alignItems: "center",
-    backgroundColor: "white",
+    height: "20%",
+    width: "100%",
     elevation: 10
   },
   flag: {
-    justifyContent: "center"
+    position: "absolute",
+    width: "30%",
+    justifyContent: "center",
+    alignItems: "center"
   },
-  bottomBorder: {
-    borderBottomWidth: 1,
-    borderBottomColor: colors.dark,
-    borderBottomStyle: "solid"
-  },
-  dropDown: {
-    paddingLeft: 30,
-    paddingRight: 10,
-    width: "80%",
-    justifyContent: "center"
+  picker: {
+    position: "absolute",
+    width: "68%",
+    right: 0,
+    height: "50%",
+    marginRight: "5%"
   },
   descriptionScroll: {
     height: "60%"

@@ -71,10 +71,8 @@ class Home extends Component {
               style={{ width: 50, height: 50 }}
             />
           </View>
-          <View style={styles.dropDown}>
-            <View style={styles.bottomBorder}>
-              <Picker />
-            </View>
+          <View style={styles.picker}>
+            <Picker />
           </View>
         </View>
       );
