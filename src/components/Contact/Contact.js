@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  Image,
-  Alert,
-  TouchableHighlight,
-  Linking
-} from "react-native";
+import { View, Text, Image, TouchableHighlight, Linking } from "react-native";
 import styles from "./styles";
 import facebook from "../../images/facebook.png";
 import twitter from "../../images/twitter.png";
@@ -42,65 +35,73 @@ class Contact extends Component {
     };
   };
 
+  //redirect to Twitter
   handleTwitter = () => {
-    // inform user of error
     Linking.openURL(TWITTER_URL).catch(err =>
       console.error("An error occurred", err)
     );
   };
+
+  //redirect to Facebook
   handleFacebook = () => {
-    // inform user of error
     Linking.openURL(FACEBOOK_URL).catch(err =>
       console.error("An error occurred", err)
     );
   };
+
+  //redirect to Website
   handleWebsite = () => {
-    // inform user of error
     Linking.openURL(WEBSITE_URL).catch(err =>
       console.error("An error occurred", err)
     );
   };
+
+  //open email app and populate 'to' field with author's email
   handleEmail = () => {
-    // inform user of error
     email(EMAIL, {}).catch(err => console.error("An error occured", err));
   };
+
   render() {
     return (
       <View style={styles.parent}>
-        <TouchableHighlight
-          onPress={() => this.handleWebsite()}
-          underlayColor={colors.light}
-          style={styles.website}
-        >
-          <LinearGradient
-            colors={[colors.primary, colors.primary, colors.dark]}
-            style={styles.webTouchWrapper}
+        <View style={styles.btnWrapper}>
+          <TouchableHighlight
+            onPress={() => this.handleWebsite()}
+            underlayColor={colors.light}
+            style={styles.touchable}
           >
-            <View style={styles.webTextWrapper}>
-              <Text style={styles.webText}>View in web</Text>
-            </View>
-            <View style={styles.webImgWrapper}>
-              <Icon name="web" color="white" size={40} />
-            </View>
-          </LinearGradient>
-        </TouchableHighlight>
-        <TouchableHighlight
-          onPress={() => this.handleEmail()}
-          underlayColor={colors.light}
-          style={styles.email}
-        >
-          <LinearGradient
-            colors={[colors.primary, colors.primary, colors.dark]}
-            style={styles.emailTouchWrapper}
+            <LinearGradient
+              colors={[colors.primary, colors.primary, colors.dark]}
+              style={styles.gradient}
+            >
+              <View style={styles.textWrapper}>
+                <Text style={styles.btnText}>View in web</Text>
+              </View>
+              <View style={styles.imgWrapper}>
+                <Icon name="web" color="white" size={40} />
+              </View>
+            </LinearGradient>
+          </TouchableHighlight>
+        </View>
+        <View style={styles.btnWrapper}>
+          <TouchableHighlight
+            onPress={() => this.handleEmail()}
+            underlayColor={colors.light}
+            style={styles.touchable}
           >
-            <View style={styles.emailTextWrapper}>
-              <Text style={styles.emailText}>Email</Text>
-            </View>
-            <View style={styles.emailImgWrapper}>
-              <Icon name="email-outline" color="white" size={40} />
-            </View>
-          </LinearGradient>
-        </TouchableHighlight>
+            <LinearGradient
+              colors={[colors.primary, colors.primary, colors.dark]}
+              style={styles.gradient}
+            >
+              <View style={styles.textWrapper}>
+                <Text style={styles.btnText}>Email</Text>
+              </View>
+              <View style={styles.imgWrapper}>
+                <Icon name="email-outline" color="white" size={40} />
+              </View>
+            </LinearGradient>
+          </TouchableHighlight>
+        </View>
         <View style={styles.credit}>
           <Text style={styles.text}>
             Some Dude - {new Date().getFullYear()}

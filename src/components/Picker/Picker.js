@@ -9,6 +9,7 @@ class CountryPicker extends Component {
   handleChange = event => {
     this.props.changeCountry(event);
   };
+
   render() {
     //prepare the list of countries to be displayed in the modal selector
     const pickerItems = countries.map((val, i) => {

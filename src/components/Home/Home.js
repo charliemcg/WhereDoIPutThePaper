@@ -6,7 +6,8 @@ import {
   ScrollView,
   ActivityIndicator,
   TouchableHighlight,
-  Linking
+  Linking,
+  Platform
 } from "react-native";
 import styles from "./styles";
 import { connect } from "react-redux";
@@ -40,7 +41,6 @@ class Home extends Component {
   };
 
   handlePress = () => {
-    // inform user of error
     Linking.openURL(this.props.link).catch(err =>
       console.error("An error occurred", err)
     );
@@ -54,8 +54,10 @@ class Home extends Component {
   getCountryFromDevice = async () => {
     try {
       const value = await AsyncStorage.getItem("COUNTRY");
+      //found a country
       if (value !== null) {
         this.props.changeCountry(value);
+        //no country saved. Get country from device info
       } else {
         const countryCode = DeviceInfo.getDeviceCountry();
         for (let i = 0; i < countries.length; i++) {
@@ -63,6 +65,7 @@ class Home extends Component {
             this.props.changeCountry(countries[i].name);
           }
         }
+        //still no country. Just use Afghanistan
         if (this.props.name === null) {
           this.props.changeCountry(countries[0].name);
         }
@@ -73,9 +76,15 @@ class Home extends Component {
   };
 
   render() {
-    const flagImgUrl =
-      "https://www.countryflags.io/" + this.props.flag + "/shiny/64.png";
+    //to best comply with UI guidelines flags on Android will be shiny and iOS will be flat
+    const flagAppearance = Platform.OS === "ios" ? "flat" : "shiny";
 
+    //getting the country flag
+    const flagImgUrl = `https://www.countryflags.io/${
+      this.props.flag
+    }/${flagAppearance}/64.png`;
+
+    //This is where the user selects a country
     const getCountryView =
       this.props.name === null ? (
         <ActivityIndicator size="large" />

@@ -26,7 +26,8 @@ export default {
     height: "50%"
   },
   descriptionScroll: {
-    height: "60%"
+    height: "60%",
+    marginBottom: "3%"
   },
   descriptionWrapper: {
     alignItems: "stretch",

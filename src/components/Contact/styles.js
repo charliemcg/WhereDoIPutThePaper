@@ -7,64 +7,45 @@ export default {
     backgroundColor: colors.notQuiteWhite,
     justifyContent: "center"
   },
-  website: {
+  btnWrapper: {
     height: "28%",
-    // backgroundColor: "#ff0",
     justifyContent: "center",
     alignItems: "center"
   },
-  webTouchWrapper: {
+  touchable: {
     height: "50%",
-    width: "72%",
-    flexDirection: "row"
+    borderRadius: 6
   },
-  webTextWrapper: {
+  gradient: {
+    height: "100%",
+    width: "72%",
+    flexDirection: "row",
+    borderWidth: 1,
+    borderColor: colors.dark,
+    borderStyle: "solid",
+    borderRadius: 6
+  },
+  textWrapper: {
     justifyContent: "center",
     width: "70%"
   },
-  webText: {
+  btnText: {
     color: colors.notQuiteWhite,
     fontSize: 25,
     textAlign: "center"
   },
-  webImgWrapper: {
-    justifyContent: "center",
-    width: "30%"
-  },
-  email: {
-    height: "28%",
-    // backgroundColor: "#f0f",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  emailTouchWrapper: {
-    height: "50%",
-    width: "72%",
-    flexDirection: "row"
-  },
-  emailTextWrapper: {
-    justifyContent: "center",
-    width: "70%"
-  },
-  emailText: {
-    color: colors.notQuiteWhite,
-    fontSize: 25,
-    textAlign: "center"
-  },
-  emailImgWrapper: {
+  imgWrapper: {
     justifyContent: "center",
     width: "30%"
   },
   credit: {
     height: "15%",
     justifyContent: "center"
-    // backgroundColor: "#0f0"
   },
   social: {
     flexDirection: "row",
     justifyContent: "space-around",
     height: "15%",
-    // backgroundColor: "#0ff",
     paddingRight: "15%",
     paddingLeft: "15%"
   },

@@ -21,19 +21,19 @@ export default {
     position: "absolute",
     bottom: "5%",
     left: "50%",
-    right: "10%",
-    backgroundColor: "#ff0"
+    right: "10%"
   },
   theButton: {
     paddingTop: 10,
     paddingBottom: 10,
     borderWidth: 1,
     borderColor: colors.dark,
-    borderStyle: "solid"
+    borderStyle: "solid",
+    borderRadius: 7
   },
   goToWebsite: {
     color: colors.notQuiteWhite,
-    fontSize: 20,
+    fontSize: 17,
     textAlign: "center"
   }
 };

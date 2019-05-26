@@ -33,10 +33,11 @@ class About extends Component {
       }
     };
   };
+
   handlePress = () => {
-    // inform user of error
     Linking.openURL(URL).catch(err => console.error("An error occurred", err));
   };
+
   render() {
     return (
       <View style={styles.parent}>
