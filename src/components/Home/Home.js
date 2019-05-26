@@ -94,7 +94,10 @@ class Home extends Component {
             {/* check for when internet is down and cannot retrieve flag */}
             <Image
               source={{ uri: flagImgUrl }}
-              style={{ width: 50, height: 50 }}
+              style={{
+                width: 50,
+                height: 50
+              }}
             />
           </View>
           <View style={styles.picker}>

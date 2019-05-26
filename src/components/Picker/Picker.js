@@ -4,6 +4,10 @@ import { connect } from "react-redux";
 import { changeCountry } from "../../actions";
 import ModalSelector from "react-native-modal-selector";
 import colors from "../../colors";
+import Device from "react-native-device-detection";
+
+//make label text bigger for tablets
+const labelFont = Device.isTablet ? 25 : 15;
 
 class CountryPicker extends Component {
   handleChange = event => {
@@ -28,7 +32,7 @@ class CountryPicker extends Component {
           height: "100%",
           justifyContent: "center"
         }}
-        selectTextStyle={{ fontSize: 15 }}
+        selectTextStyle={{ fontSize: labelFont }}
         optionTextStyle={{ color: colors.dark }}
       />
     );

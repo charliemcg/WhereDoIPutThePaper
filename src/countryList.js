@@ -312,7 +312,7 @@ export const countries = [
       "https://www.amazon.co.uk/gp/product/1841623911/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1841623911&linkCode=as2&tag=noelectextrep-21"
   },
   {
-    name: "D.R. Congo",
+    name: "Congo, D.R.",
     flag: "CD",
     description:
       "From all research, it seems that the locals of the Congo (DRC) have a rather cavalier attitude to paper disposal, so best bin any you use rather than contributing to the problem.",
@@ -496,7 +496,7 @@ export const countries = [
       "https://www.amazon.co.uk/gp/product/184162554X/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=184162554X&linkCode=as2&tag=noelectextrep-21"
   },
   {
-    name: "The Gambia",
+    name: "Gambia, The",
     flag: "GM",
     description:
       "The locals prefer holes in the ground-style toilets and washing rather than paper in The Gambia. In these toilets you'll be using a bucket of water to flush, so take paper with you or put it in a bin if provided. Some more basic pits are just covered when full and a new hole dug in place, again it's best to take the paper with you as it doesn't break down properly. There are flush lavatories with septic tanks that are periodically emptied, but it's best to check whether these systems will take paper.",
@@ -720,7 +720,7 @@ export const countries = [
       "https://www.amazon.co.uk/gp/product/1484038975/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1484038975&linkCode=as2&tag=noelectextrep-21"
   },
   {
-    name: "North Korea",
+    name: "Korea, North ",
     flag: "KP",
     description:
       "If you happen to find yourself in North Korea and can find a toilet that doesn't have a microphone listening in to your every word (imagine having the job of listening in to that), you'll probably be throwing the paper down the hole you use, but you can flush it in most decadent Western-style toilets. Who says Communism is a bad thing?",
@@ -728,7 +728,7 @@ export const countries = [
       "https://www.amazon.co.uk/gp/product/1841624764/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1841624764&linkCode=as2&tag=noelectextrep-21"
   },
   {
-    name: "South Korea",
+    name: "Korea, South",
     flag: "KR",
     description:
       "In general, South Koreans don't flush their paper, they put it in the bin that is provided by the toilet.",
