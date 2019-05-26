@@ -105,10 +105,10 @@ class Home extends Component {
         <TouchableHighlight
           onPress={this.handlePress}
           underlayColor={colors.light}
+          style={styles.bookButton}
         >
           <LinearGradient
             colors={[colors.primary, colors.primary, colors.dark]}
-            style={styles.bookButton}
           >
             <View style={styles.getBookWrapper}>
               <View>

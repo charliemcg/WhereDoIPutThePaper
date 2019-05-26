@@ -4,23 +4,18 @@ export default {
   parent: {
     width: "100%",
     height: "100%",
-    backgroundColor: colors.notQuiteWhite
-  },
-  contactWrapper: {
-    paddingLeft: 30,
-    paddingRight: 30,
-    paddingTop: 50,
-    height: "90%",
-    justifyContent: "space-around"
+    backgroundColor: colors.notQuiteWhite,
+    justifyContent: "center"
   },
   website: {
-    height: "15%",
-    borderStyle: "solid",
-    borderColor: colors.dark,
-    borderWidth: 1
+    height: "28%",
+    // backgroundColor: "#ff0",
+    justifyContent: "center",
+    alignItems: "center"
   },
   webTouchWrapper: {
-    height: "100%",
+    height: "50%",
+    width: "72%",
     flexDirection: "row"
   },
   webTextWrapper: {
@@ -36,18 +31,15 @@ export default {
     justifyContent: "center",
     width: "30%"
   },
-  webImg: {
-    width: 50,
-    height: 50
-  },
   email: {
-    height: "15%",
-    borderStyle: "solid",
-    borderColor: colors.dark,
-    borderWidth: 1
+    height: "28%",
+    // backgroundColor: "#f0f",
+    justifyContent: "center",
+    alignItems: "center"
   },
   emailTouchWrapper: {
-    height: "100%",
+    height: "50%",
+    width: "72%",
     flexDirection: "row"
   },
   emailTextWrapper: {
@@ -63,22 +55,18 @@ export default {
     justifyContent: "center",
     width: "30%"
   },
-  emailImg: {
-    width: 50,
-    height: 50
-  },
   credit: {
-    height: "10%",
-    marginTop: 50,
+    height: "15%",
     justifyContent: "center"
+    // backgroundColor: "#0f0"
   },
   social: {
     flexDirection: "row",
     justifyContent: "space-around",
-    height: "10%",
-    marginLeft: 30,
-    marginRight: 30,
-    marginBottom: 50
+    height: "15%",
+    // backgroundColor: "#0ff",
+    paddingRight: "15%",
+    paddingLeft: "15%"
   },
   facebook: {
     justifyContent: "center"

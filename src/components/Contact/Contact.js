@@ -11,7 +11,6 @@ import styles from "./styles";
 import facebook from "../../images/facebook.png";
 import twitter from "../../images/twitter.png";
 import email from "react-native-email";
-import TitleBar from "../TitleBar";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../../colors";
@@ -67,69 +66,61 @@ class Contact extends Component {
   };
   render() {
     return (
-      <View>
-        <View style={styles.parent}>
-          <View style={styles.contactWrapper}>
-            <View style={styles.website}>
-              <TouchableHighlight
-                onPress={() => this.handleWebsite()}
-                underlayColor={colors.light}
-              >
-                <LinearGradient
-                  colors={[colors.primary, colors.primary, colors.dark]}
-                >
-                  <View style={styles.webTouchWrapper}>
-                    <View style={styles.webTextWrapper}>
-                      <Text style={styles.webText}>View in web</Text>
-                    </View>
-                    <View style={styles.webImgWrapper}>
-                      <Icon name="web" color="white" size={60} />
-                    </View>
-                  </View>
-                </LinearGradient>
-              </TouchableHighlight>
+      <View style={styles.parent}>
+        <TouchableHighlight
+          onPress={() => this.handleWebsite()}
+          underlayColor={colors.light}
+          style={styles.website}
+        >
+          <LinearGradient
+            colors={[colors.primary, colors.primary, colors.dark]}
+            style={styles.webTouchWrapper}
+          >
+            <View style={styles.webTextWrapper}>
+              <Text style={styles.webText}>View in web</Text>
             </View>
-            <View style={styles.email}>
-              <TouchableHighlight
-                onPress={() => this.handleEmail()}
-                underlayColor={colors.light}
-              >
-                <LinearGradient
-                  colors={[colors.primary, colors.primary, colors.dark]}
-                >
-                  <View style={styles.emailTouchWrapper}>
-                    <View style={styles.emailTextWrapper}>
-                      <Text style={styles.emailText}>Email</Text>
-                    </View>
-                    <View style={styles.emailImgWrapper}>
-                      <Icon name="email-outline" color="white" size={60} />
-                    </View>
-                  </View>
-                </LinearGradient>
-              </TouchableHighlight>
+            <View style={styles.webImgWrapper}>
+              <Icon name="web" color="white" size={40} />
             </View>
-            <View style={styles.credit}>
-              <Text style={styles.text}>
-                Some Dude - {new Date().getFullYear()}
-              </Text>
+          </LinearGradient>
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => this.handleEmail()}
+          underlayColor={colors.light}
+          style={styles.email}
+        >
+          <LinearGradient
+            colors={[colors.primary, colors.primary, colors.dark]}
+            style={styles.emailTouchWrapper}
+          >
+            <View style={styles.emailTextWrapper}>
+              <Text style={styles.emailText}>Email</Text>
             </View>
-            <View style={styles.social}>
-              <TouchableHighlight
-                style={styles.facebook}
-                onPress={() => this.handleFacebook()}
-                underlayColor={colors.notQuiteWhite}
-              >
-                <Image style={{ width: 30, height: 30 }} source={facebook} />
-              </TouchableHighlight>
-              <TouchableHighlight
-                style={styles.twitter}
-                onPress={() => this.handleTwitter()}
-                underlayColor={colors.notQuiteWhite}
-              >
-                <Image style={{ width: 30, height: 30 }} source={twitter} />
-              </TouchableHighlight>
+            <View style={styles.emailImgWrapper}>
+              <Icon name="email-outline" color="white" size={40} />
             </View>
-          </View>
+          </LinearGradient>
+        </TouchableHighlight>
+        <View style={styles.credit}>
+          <Text style={styles.text}>
+            Some Dude - {new Date().getFullYear()}
+          </Text>
+        </View>
+        <View style={styles.social}>
+          <TouchableHighlight
+            style={styles.facebook}
+            onPress={() => this.handleFacebook()}
+            underlayColor={colors.notQuiteWhite}
+          >
+            <Image style={{ width: 30, height: 30 }} source={facebook} />
+          </TouchableHighlight>
+          <TouchableHighlight
+            style={styles.twitter}
+            onPress={() => this.handleTwitter()}
+            underlayColor={colors.notQuiteWhite}
+          >
+            <Image style={{ width: 30, height: 30 }} source={twitter} />
+          </TouchableHighlight>
         </View>
       </View>
     );

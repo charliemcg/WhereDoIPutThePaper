@@ -17,7 +17,6 @@ export default {
   flag: {
     position: "absolute",
     width: "30%",
-    // justifyContent: "center",
     alignItems: "center"
   },
   picker: {
@@ -41,14 +40,17 @@ export default {
     padding: 15
   },
   bookButton: {
-    margin: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    marginLeft: "6%",
+    marginRight: "6%",
+    marginBottom: 20,
     borderWidth: 1,
     borderColor: colors.dark,
-    borderStyle: "solid"
+    borderStyle: "solid",
+    borderRadius: 6
   },
   getBookWrapper: {
+    marginTop: "3%",
+    marginBottom: "3%",
     flexDirection: "row",
     justifyContent: "space-around"
   },

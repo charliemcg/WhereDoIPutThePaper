@@ -14,27 +14,21 @@ export default {
     justifyContent: "center",
     fontSize: 17,
     color: colors.notQuiteBlack,
-    margin: 20,
+    margin: "5%",
     textAlign: "center"
   },
-  buttonWrapper: {
-    marginBottom: 20,
-    marginLeft: 40,
-    marginRight: 40,
-    height: 70,
-    justifyContent: "center"
-  },
   bookButton: {
-    marginLeft: 20,
-    marginRight: 20,
+    marginLeft: "6%",
+    marginRight: "6%",
     marginBottom: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
     borderWidth: 1,
     borderColor: colors.dark,
-    borderStyle: "solid"
+    borderStyle: "solid",
+    borderRadius: 6
   },
   getBookWrapper: {
+    marginTop: "3%",
+    marginBottom: "3%",
     flexDirection: "row",
     justifyContent: "space-around"
   },

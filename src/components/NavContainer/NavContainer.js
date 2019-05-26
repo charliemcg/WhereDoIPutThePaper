@@ -58,6 +58,9 @@ const ContactStack = createStackNavigator({
 
 const Navigator = createDrawerNavigator(
   {
+    Contact: {
+      screen: ContactStack
+    },
     Home: {
       screen: HomeStack
     },
@@ -69,9 +72,6 @@ const Navigator = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: "Contribute to Toilet Twinning"
       }
-    },
-    Contact: {
-      screen: ContactStack
     }
   },
   {
