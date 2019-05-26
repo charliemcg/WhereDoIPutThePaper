@@ -1,4 +1,4 @@
-import colors from "../../colors";
+import colors from "../../../colors";
 
 export default {
   parent: {
@@ -14,13 +14,13 @@ export default {
     justifyContent: "center",
     fontSize: 17,
     color: colors.notQuiteBlack,
-    margin: "5%",
+    padding: "10%",
     textAlign: "center"
   },
   bookButton: {
-    marginLeft: "6%",
-    marginRight: "6%",
-    marginBottom: 20,
+    marginLeft: "12%",
+    marginRight: "12%",
+    marginBottom: "6%",
     borderWidth: 1,
     borderColor: colors.dark,
     borderStyle: "solid",
