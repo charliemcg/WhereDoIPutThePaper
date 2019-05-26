@@ -15,46 +15,58 @@ import colors from "../../colors";
  * This is so every screen can have a navigation header.
  */
 
-const HomeStack = createStackNavigator({
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      headerTitle: "Where Do I Put The Paper?",
-      headerTitleStyle: {
-        fontSize: 17,
-        width: Dimensions.get("window").width
+const HomeStack = createStackNavigator(
+  {
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        headerTitle: "Where Do I Put The Paper?",
+        headerTitleStyle: {
+          fontSize: 17,
+          width: Dimensions.get("window").width
+        }
       }
     }
-  }
-});
+  },
+  { headerLayoutPreset: "center" }
+);
 
-const AboutStack = createStackNavigator({
-  About: {
-    screen: About,
-    navigationOptions: {
-      headerTitle: "About"
+const AboutStack = createStackNavigator(
+  {
+    About: {
+      screen: About,
+      navigationOptions: {
+        headerTitle: "About"
+      }
     }
-  }
-});
+  },
+  { headerLayoutPreset: "center" }
+);
 
-const TwinningStack = createStackNavigator({
-  Twinning: {
-    screen: Twinning,
-    navigationOptions: {
-      headerTitle: "Toilet Twinning",
-      drawerLabel: "Contribute to Toilet Twinning"
+const TwinningStack = createStackNavigator(
+  {
+    Twinning: {
+      screen: Twinning,
+      navigationOptions: {
+        headerTitle: "Toilet Twinning",
+        drawerLabel: "Contribute to Toilet Twinning"
+      }
     }
-  }
-});
+  },
+  { headerLayoutPreset: "center" }
+);
 
-const ContactStack = createStackNavigator({
-  Contact: {
-    screen: Contact,
-    navigationOptions: {
-      headerTitle: "Contact"
+const ContactStack = createStackNavigator(
+  {
+    Contact: {
+      screen: Contact,
+      navigationOptions: {
+        headerTitle: "Contact"
+      }
     }
-  }
-});
+  },
+  { headerLayoutPreset: "center" }
+);
 
 const Navigator = createDrawerNavigator(
   {

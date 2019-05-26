@@ -61,6 +61,7 @@ class Twinning extends Component {
           <TouchableHighlight
             onPress={this.handlePress}
             underlayColor={colors.light}
+            style={styles.touchable}
           >
             <LinearGradient
               colors={[colors.primary, colors.primary, colors.dark]}
