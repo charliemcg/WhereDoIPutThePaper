@@ -87,7 +87,7 @@ class Home extends Component {
     //This is where the user selects a country
     const getCountryView =
       this.props.name === null ? (
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" style={styles.countryWrapper} />
       ) : (
         <View style={styles.countryWrapper}>
           <View style={styles.flag}>
