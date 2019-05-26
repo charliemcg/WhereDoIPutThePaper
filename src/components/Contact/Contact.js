@@ -8,6 +8,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
+import Device from "react-native-device-detection";
 
 const TWITTER_URL = "https://twitter.com";
 // "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
@@ -15,6 +16,8 @@ const FACEBOOK_URL = "https://www.facebook.com";
 // "https://web.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fwww.wheredoiputthepaper.com%2F&display=popup&ref=plugin&src=share_button";
 const WEBSITE_URL = "http://wheredoiputthepaper.com";
 const EMAIL = "fakeemail@needrealemail.com";
+
+const socialSize = Device.isTablet ? 60 : 30;
 
 class Contact extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -113,14 +116,20 @@ class Contact extends Component {
             onPress={() => this.handleFacebook()}
             underlayColor={colors.notQuiteWhite}
           >
-            <Image style={{ width: 30, height: 30 }} source={facebook} />
+            <Image
+              style={{ width: socialSize, height: socialSize }}
+              source={facebook}
+            />
           </TouchableHighlight>
           <TouchableHighlight
             style={styles.twitter}
             onPress={() => this.handleTwitter()}
             underlayColor={colors.notQuiteWhite}
           >
-            <Image style={{ width: 30, height: 30 }} source={twitter} />
+            <Image
+              style={{ width: socialSize, height: socialSize }}
+              source={twitter}
+            />
           </TouchableHighlight>
         </View>
       </View>

@@ -1,14 +1,49 @@
-import { Dimensions } from "react-native";
+import React from "react";
+import { Dimensions, View, Text } from "react-native";
 import {
   createAppContainer,
   createDrawerNavigator,
-  createStackNavigator
+  createStackNavigator,
+  DrawerItems
 } from "react-navigation";
 import Home from "../Home";
 import About from "../About";
 import Twinning from "../Twinning";
 import Contact from "../Contact";
 import colors from "../../colors";
+import Device from "react-native-device-detection";
+import LinearGradient from "react-native-linear-gradient";
+
+//make label text bigger for tablets
+const labelFont = Device.isTablet ? 20 : 15;
+
+const DrawerHeader = props => (
+  <View>
+    <LinearGradient
+      colors={[colors.primary, colors.primary, colors.dark]}
+      style={{
+        height: "40%",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      <Text
+        style={{
+          color: "white",
+          fontSize: 30,
+          textAlign: "center",
+          padding: "10%"
+        }}
+      >
+        Where Do I Put The Paper?
+      </Text>
+      <Text style={{ color: colors.notQuiteWhite }}>
+        www.wheredoiputthepaper.com
+      </Text>
+    </LinearGradient>
+    <DrawerItems {...props} />
+  </View>
+);
 
 /**
  * Every screen is placed in it's own stack before being placed in the drawer navigator.
@@ -92,8 +127,12 @@ const Navigator = createDrawerNavigator(
       activeTintColor: colors.notQuiteWhite,
       inactiveTintColor: colors.notQuiteBlack,
       activeBackgroundColor: colors.primary,
-      inactiveBackgroundColor: colors.notQuiteWhite
-    }
+      inactiveBackgroundColor: colors.notQuiteWhite,
+      labelStyle: {
+        fontSize: labelFont
+      }
+    },
+    contentComponent: DrawerHeader
   }
 );
 
