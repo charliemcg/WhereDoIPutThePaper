@@ -5,6 +5,7 @@ import {
   Image,
   TouchableHighlight,
   Linking,
+  Platform,
   Alert
 } from "react-native";
 import styles from "./styles";
@@ -17,6 +18,8 @@ import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 import Device from "react-native-device-detection";
 import Share from "react-native-share";
+
+const isiOS = Platform.OS === "ios" ? true : false;
 
 const TWITTER_URL =
   "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
@@ -60,22 +63,30 @@ class Contact extends Component {
 
   //redirect to Twitter
   handleTwitter = () => {
-    Share.isPackageInstalled("com.twitter.android").then(({ isInstalled }) => {
-      isInstalled
-        ? Share.shareSingle(twitterOptions)
-        : //open in browser if Twitter not installed
-          Linking.openURL(TWITTER_URL);
-    });
+    isiOS
+      ? Linking.openURL(TWITTER_URL)
+      : Share.isPackageInstalled("com.twitter.android").then(
+          ({ isInstalled }) => {
+            isInstalled
+              ? Share.shareSingle(twitterOptions)
+              : //open in browser if Twitter not installed
+                Linking.openURL(TWITTER_URL);
+          }
+        );
   };
 
   //redirect to Facebook
   handleFacebook = () => {
-    Share.isPackageInstalled("com.facebook.katana").then(({ isInstalled }) => {
-      isInstalled
-        ? Share.shareSingle(facebookOptions)
-        : //open in browser if Facebook not installed
-          Linking.openURL(FACEBOOK_URL);
-    });
+    isiOS
+      ? Linking.openURL(FACEBOOK_URL)
+      : Share.isPackageInstalled("com.facebook.katana").then(
+          ({ isInstalled }) => {
+            isInstalled
+              ? Share.shareSingle(facebookOptions)
+              : //open in browser if Facebook not installed
+                Linking.openURL(FACEBOOK_URL);
+          }
+        );
   };
 
   //redirect to Website
