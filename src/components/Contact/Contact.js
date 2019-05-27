@@ -25,7 +25,7 @@ const FACEBOOK_URL =
 const WEBSITE_URL = "http://wheredoiputthepaper.com";
 const EMAIL = "matt.kitson@gmail.com";
 
-const socialSize = Device.isTablet ? 60 : 30;
+const socialSize = Device.isTablet ? 40 : 30;
 
 // //share via Facebook
 const facebookOptions = {
@@ -136,7 +136,7 @@ class Contact extends Component {
             <Text style={{ fontSize: 17 }}>Share this app!</Text>
           </View>
           <TouchableHighlight
-            style={styles.facebook}
+            style={styles.socialIcon}
             onPress={() => this.handleFacebook()}
             underlayColor={colors.notQuiteWhite}
           >
@@ -146,7 +146,7 @@ class Contact extends Component {
             />
           </TouchableHighlight>
           <TouchableHighlight
-            style={styles.twitter}
+            style={styles.socialIcon}
             onPress={() => this.handleTwitter()}
             underlayColor={colors.notQuiteWhite}
           >

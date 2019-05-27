@@ -49,10 +49,11 @@ export default {
     paddingRight: "20%",
     paddingLeft: "20%"
   },
-  facebook: {
-    justifyContent: "center"
+  shareText: {
+    justifyContent: "center",
+    alignItems: "center"
   },
-  twitter: {
+  socialIcon: {
     justifyContent: "center"
   },
   text: {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, View, Text } from "react-native";
+import { Dimensions, View, Text, Image } from "react-native";
 import {
   createAppContainer,
   createDrawerNavigator,
@@ -13,9 +13,12 @@ import Contact from "../Contact";
 import colors from "../../colors";
 import Device from "react-native-device-detection";
 import LinearGradient from "react-native-linear-gradient";
+import rollImg from "../../images/PaperIconNoBackground.png";
 
 //make label text bigger for tablets
 const labelFont = Device.isTablet ? 20 : 15;
+
+const width = Dimensions.get("window").width;
 
 const DrawerHeader = props => (
   <View>
@@ -27,12 +30,21 @@ const DrawerHeader = props => (
         justifyContent: "center"
       }}
     >
+      <Image
+        style={{
+          width: width * 0.15,
+          height: width * 0.15
+        }}
+        source={rollImg}
+      />
       <Text
         style={{
           color: "white",
           fontSize: 30,
           textAlign: "center",
-          padding: "10%"
+          paddingLeft: "3%",
+          paddingRight: "3%",
+          paddingBottom: "3%"
         }}
       >
         Where Do I Put The Paper?

@@ -53,10 +53,7 @@ export default {
     justifyContent: "center",
     alignItems: "center"
   },
-  facebook: {
-    justifyContent: "center"
-  },
-  twitter: {
+  socialIcon: {
     justifyContent: "center"
   },
   text: {
