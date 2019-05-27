@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableHighlight, Linking } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TouchableHighlight,
+  Linking,
+  Alert
+} from "react-native";
 import styles from "./styles";
 import facebook from "../../images/facebook.png";
 import twitter from "../../images/twitter.png";
@@ -9,15 +16,28 @@ import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 import Device from "react-native-device-detection";
+import Share from "react-native-share";
 
-const TWITTER_URL = "https://twitter.com";
-// "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
-const FACEBOOK_URL = "https://www.facebook.com";
-// "https://web.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fwww.wheredoiputthepaper.com%2F&display=popup&ref=plugin&src=share_button";
+const TWITTER_URL =
+  "http://twitter.com/home?status=Where%20do%20I%20put%20the%20paper?%20An%20invaluable%20travel%20guide%20-%20http://bit.ly/faRjvQ%20-%20via%20@mattkitson";
+const FACEBOOK_URL =
+  "https://web.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=http%3A%2F%2Fwww.wheredoiputthepaper.com%2F&display=popup&ref=plugin&src=share_button";
 const WEBSITE_URL = "http://wheredoiputthepaper.com";
-const EMAIL = "fakeemail@needrealemail.com";
+const EMAIL = "matt.kitson@gmail.com";
 
 const socialSize = Device.isTablet ? 60 : 30;
+
+// //share via Facebook
+const facebookOptions = {
+  url: WEBSITE_URL,
+  social: Share.Social.FACEBOOK
+};
+
+//share via Twitter
+const twitterOptions = {
+  url: WEBSITE_URL,
+  social: Share.Social.TWITTER
+};
 
 class Contact extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -40,16 +60,22 @@ class Contact extends Component {
 
   //redirect to Twitter
   handleTwitter = () => {
-    Linking.openURL(TWITTER_URL).catch(err =>
-      console.error("An error occurred", err)
-    );
+    Share.isPackageInstalled("com.twitter.android").then(({ isInstalled }) => {
+      isInstalled
+        ? Share.shareSingle(twitterOptions)
+        : //open in browser if Twitter not installed
+          Linking.openURL(TWITTER_URL);
+    });
   };
 
   //redirect to Facebook
   handleFacebook = () => {
-    Linking.openURL(FACEBOOK_URL).catch(err =>
-      console.error("An error occurred", err)
-    );
+    Share.isPackageInstalled("com.facebook.katana").then(({ isInstalled }) => {
+      isInstalled
+        ? Share.shareSingle(facebookOptions)
+        : //open in browser if Facebook not installed
+          Linking.openURL(FACEBOOK_URL);
+    });
   };
 
   //redirect to Website
@@ -105,12 +131,10 @@ class Contact extends Component {
             </LinearGradient>
           </TouchableHighlight>
         </View>
-        <View style={styles.credit}>
-          <Text style={styles.text}>
-            Some Dude - {new Date().getFullYear()}
-          </Text>
-        </View>
         <View style={styles.social}>
+          <View style={styles.shareText}>
+            <Text style={{ fontSize: 17 }}>Share this app!</Text>
+          </View>
           <TouchableHighlight
             style={styles.facebook}
             onPress={() => this.handleFacebook()}
@@ -131,6 +155,11 @@ class Contact extends Component {
               source={twitter}
             />
           </TouchableHighlight>
+        </View>
+        <View style={styles.credit}>
+          <Text style={styles.text}>
+            Matt Kitson - {new Date().getFullYear()}
+          </Text>
         </View>
       </View>
     );

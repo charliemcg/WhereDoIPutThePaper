@@ -49,6 +49,10 @@ export default {
     paddingRight: "15%",
     paddingLeft: "15%"
   },
+  shareText: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
   facebook: {
     justifyContent: "center"
   },
