@@ -18,8 +18,8 @@ export default {
     textAlign: "center"
   },
   bookButton: {
-    marginLeft: "12%",
-    marginRight: "12%",
+    marginLeft: "25%",
+    marginRight: "25%",
     marginBottom: "6%",
     borderWidth: 1,
     borderColor: colors.dark,
