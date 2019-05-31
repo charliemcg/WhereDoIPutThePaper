@@ -18,6 +18,7 @@ import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 import Device from "react-native-device-detection";
 import Share from "react-native-share";
+import * as Animatable from "react-native-animatable";
 
 const isiOS = Platform.OS === "ios" ? true : false;
 

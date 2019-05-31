@@ -7,8 +7,11 @@ export default {
     textAlign: "center",
     backgroundColor: colors.notQuiteWhite
   },
+  animationWrapper: {
+    height: "100%"
+  },
   scrollWrapper: {
-    height: "85%"
+    height: "100%"
   },
   about: {
     justifyContent: "center",
@@ -18,7 +21,6 @@ export default {
     textAlign: "center"
   },
   buttonWrapper: {
-    // height: "15%",
     justifyContent: "center",
     alignItems: "center"
   },
