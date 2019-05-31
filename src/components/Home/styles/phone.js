@@ -1,4 +1,6 @@
+import { Dimensions } from "react-native";
 import colors from "../../../colors";
+const height = Dimensions.get("window").height;
 
 export default {
   parent: {
@@ -14,25 +16,27 @@ export default {
     width: "100%",
     elevation: 10
   },
-  flagBackground: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: colors.light,
-    position: "absolute"
-  },
+  // flagBackground: {
+  //   width: 80,
+  //   height: 80,
+  //   borderRadius: 40,
+  //   backgroundColor: colors.light,
+  //   position: "absolute"
+  // },
   flag: {
-    position: "absolute",
-    width: "30%",
-    height: 80,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "flex-end",
+    height: "100%",
+    flex: 2
+  },
+  flagDimensions: {
+    width: height * 0.1,
+    height: height * 0.1
   },
   picker: {
-    position: "absolute",
-    width: "70%",
-    right: 0,
-    height: "50%"
+    height: "50%",
+    alignItems: "center",
+    flex: 6
   },
   descriptionScroll: {
     height: "65%"

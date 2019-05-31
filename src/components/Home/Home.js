@@ -85,27 +85,19 @@ class Home extends Component {
       this.props.flag
     }/${flagAppearance}/64.png`;
 
+    const getFlagView = flagImgUrl !== null && (
+      <View style={styles.flag}>
+        <Image source={{ uri: flagImgUrl }} style={styles.flagDimensions} />
+      </View>
+    );
+
     //This is where the user selects a country
     const getCountryView =
-      this.props.name === null ? (
+      this.props.name == null ? (
         <ActivityIndicator size="large" style={styles.countryWrapper} />
       ) : (
         <View style={styles.countryWrapper}>
-          {/* api only returns flag of max size of 50x50 */}
-          <View style={styles.flag}>
-            {/* check for when internet is down and cannot retrieve flag */}
-            <LinearGradient
-              colors={[colors.light, colors.light, colors.primary]}
-              style={styles.flagBackground}
-            />
-            <Image
-              source={{ uri: flagImgUrl }}
-              style={{
-                width: 50,
-                height: 50
-              }}
-            />
-          </View>
+          {getFlagView}
           <View style={styles.picker}>
             <Picker />
           </View>
