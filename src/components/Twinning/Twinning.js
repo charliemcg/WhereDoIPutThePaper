@@ -5,7 +5,8 @@ import {
   Linking,
   TouchableHighlight,
   Image,
-  Dimensions
+  Dimensions,
+  SafeAreaView
 } from "react-native";
 import styles from "./styles";
 import colors from "../../colors";
@@ -41,7 +42,7 @@ class Twinning extends Component {
 
   render() {
     return (
-      <View style={styles.parent}>
+      <SafeAreaView style={styles.parent}>
         <View style={styles.aboutWrapper}>
           <Text style={styles.about}>
             As I was fiddling about with this site again, it occurred to me how
@@ -71,7 +72,7 @@ class Twinning extends Component {
             </LinearGradient>
           </TouchableHighlight>
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }

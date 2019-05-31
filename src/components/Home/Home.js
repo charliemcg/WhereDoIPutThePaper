@@ -7,7 +7,8 @@ import {
   ActivityIndicator,
   TouchableHighlight,
   Linking,
-  Platform
+  Platform,
+  SafeAreaView
 } from "react-native";
 import styles from "./styles";
 import { connect } from "react-redux";
@@ -90,8 +91,13 @@ class Home extends Component {
         <ActivityIndicator size="large" style={styles.countryWrapper} />
       ) : (
         <View style={styles.countryWrapper}>
+          {/* api only returns flag of max size of 50x50 */}
           <View style={styles.flag}>
             {/* check for when internet is down and cannot retrieve flag */}
+            <LinearGradient
+              colors={[colors.light, colors.light, colors.primary]}
+              style={styles.flagBackground}
+            />
             <Image
               source={{ uri: flagImgUrl }}
               style={{
@@ -107,33 +113,35 @@ class Home extends Component {
       );
 
     return (
-      <View style={styles.parent}>
+      <SafeAreaView style={styles.parent}>
         {getCountryView}
         <ScrollView style={styles.descriptionScroll}>
           <View style={styles.descriptionWrapper}>
             <Text style={styles.description}>{this.props.description}</Text>
           </View>
         </ScrollView>
-        <TouchableHighlight
-          onPress={this.handlePress}
-          underlayColor={colors.light}
-          style={styles.bookButton}
-        >
-          <LinearGradient
-            colors={[colors.primary, colors.primary, colors.dark]}
+        <View style={styles.buttonWrapper}>
+          <TouchableHighlight
+            onPress={this.handlePress}
+            underlayColor={colors.light}
+            style={styles.bookButton}
           >
-            <View style={styles.getBookWrapper}>
-              <View>
-                <Text style={styles.getTheBook}>Get the book</Text>
-                <Text style={styles.supportAppreciated}>
-                  Your support is appreciated
-                </Text>
+            <LinearGradient
+              colors={[colors.primary, colors.primary, colors.dark]}
+            >
+              <View style={styles.getBookWrapper}>
+                <View>
+                  <Text style={styles.getTheBook}>Get the book</Text>
+                  <Text style={styles.supportAppreciated}>
+                    Your support is appreciated
+                  </Text>
+                </View>
+                <Icon name="book" color={colors.notQuiteWhite} size={60} />
               </View>
-              <Icon name="book" color={colors.notQuiteWhite} size={60} />
-            </View>
-          </LinearGradient>
-        </TouchableHighlight>
-      </View>
+            </LinearGradient>
+          </TouchableHighlight>
+        </View>
+      </SafeAreaView>
     );
   }
 }

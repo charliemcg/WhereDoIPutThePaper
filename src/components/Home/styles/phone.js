@@ -14,9 +14,18 @@ export default {
     width: "100%",
     elevation: 10
   },
+  flagBackground: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: colors.light,
+    position: "absolute"
+  },
   flag: {
     position: "absolute",
     width: "30%",
+    height: 80,
+    justifyContent: "center",
     alignItems: "center"
   },
   picker: {
@@ -26,8 +35,7 @@ export default {
     height: "50%"
   },
   descriptionScroll: {
-    height: "60%",
-    marginBottom: "3%"
+    height: "65%"
   },
   descriptionWrapper: {
     alignItems: "stretch",
@@ -40,10 +48,13 @@ export default {
     color: colors.notQuiteBlack,
     padding: 15
   },
+  buttonWrapper: {
+    height: "15%",
+    justifyContent: "center",
+    alignItems: "center"
+  },
   bookButton: {
-    marginLeft: "6%",
-    marginRight: "6%",
-    marginBottom: 20,
+    width: "80%",
     borderWidth: 1,
     borderColor: colors.dark,
     borderStyle: "solid",

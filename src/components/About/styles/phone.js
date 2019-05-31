@@ -12,15 +12,18 @@ export default {
   },
   about: {
     justifyContent: "center",
-    fontSize: 22,
+    fontSize: 20,
     color: colors.notQuiteBlack,
     margin: "5%",
     textAlign: "center"
   },
+  buttonWrapper: {
+    // height: "15%",
+    justifyContent: "center",
+    alignItems: "center"
+  },
   bookButton: {
-    marginLeft: "6%",
-    marginRight: "6%",
-    marginBottom: 20,
+    width: "80%",
     borderWidth: 1,
     borderColor: colors.dark,
     borderStyle: "solid",

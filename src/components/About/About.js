@@ -4,7 +4,8 @@ import {
   Text,
   ScrollView,
   Linking,
-  TouchableHighlight
+  TouchableHighlight,
+  SafeAreaView
 } from "react-native";
 import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -40,7 +41,7 @@ class About extends Component {
 
   render() {
     return (
-      <View style={styles.parent}>
+      <SafeAreaView style={styles.parent}>
         <ScrollView style={styles.scrollWrapper}>
           <Text style={styles.about}>
             I recently spent a few months travelling around South America and
@@ -78,27 +79,29 @@ class About extends Component {
             locally, follow them. I don't want to be held responsible for an
             international incident if you bung up the bog somewhere posh.
           </Text>
-          <TouchableHighlight
-            onPress={this.handlePress}
-            underlayColor={colors.light}
-            style={styles.bookButton}
-          >
-            <LinearGradient
-              colors={[colors.primary, colors.primary, colors.dark]}
+          <View style={styles.buttonWrapper}>
+            <TouchableHighlight
+              onPress={this.handlePress}
+              underlayColor={colors.light}
+              style={styles.bookButton}
             >
-              <View style={styles.getBookWrapper}>
-                <View>
-                  <Text style={styles.getTheBook}>Guide books</Text>
-                  <Text style={styles.supportAppreciated}>
-                    Your support is appreciated
-                  </Text>
+              <LinearGradient
+                colors={[colors.primary, colors.primary, colors.dark]}
+              >
+                <View style={styles.getBookWrapper}>
+                  <View>
+                    <Text style={styles.getTheBook}>Guide books</Text>
+                    <Text style={styles.supportAppreciated}>
+                      Your support is appreciated
+                    </Text>
+                  </View>
+                  <Icon name="book" color={colors.notQuiteWhite} size={60} />
                 </View>
-                <Icon name="book" color={colors.notQuiteWhite} size={60} />
-              </View>
-            </LinearGradient>
-          </TouchableHighlight>
+              </LinearGradient>
+            </TouchableHighlight>
+          </View>
         </ScrollView>
-      </View>
+      </SafeAreaView>
     );
   }
 }

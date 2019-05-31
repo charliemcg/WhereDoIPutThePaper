@@ -6,6 +6,11 @@ import NavContainer from "./components/NavContainer";
 import { Platform, StatusBar, View } from "react-native";
 import colors from "./colors";
 
+/**
+ * Toilet Paper icon by Freepik
+ * "Icon made by Freepik from www.flaticon.com"
+ */
+
 const store = createStore(reducer);
 
 const MyStatusBar = ({ backgroundColor, ...props }) => (

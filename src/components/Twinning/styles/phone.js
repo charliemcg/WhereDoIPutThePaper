@@ -1,4 +1,5 @@
 import colors from "../../../colors";
+import Device from "react-native-device-detection";
 
 export default {
   parent: {
@@ -19,7 +20,7 @@ export default {
   },
   buttonWrapper: {
     position: "absolute",
-    bottom: "5%",
+    bottom: Device.isIphoneX ? "9%" : "5%",
     left: "50%",
     right: "10%"
   },
