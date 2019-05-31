@@ -30,8 +30,8 @@ export default {
     flex: 2
   },
   flagDimensions: {
-    width: height * 0.1,
-    height: height * 0.1
+    width: height * 0.09,
+    height: height * 0.09
   },
   picker: {
     height: "50%",
