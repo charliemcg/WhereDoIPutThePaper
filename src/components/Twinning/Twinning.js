@@ -3,16 +3,18 @@ import {
   View,
   Text,
   Linking,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
   Image,
   Dimensions,
-  SafeAreaView
+  SafeAreaView,
+  Animated
 } from "react-native";
 import styles from "./styles";
 import colors from "../../colors";
 import zambiaImg from "../../images/zambiaTwinning.png";
 import LinearGradient from "react-native-linear-gradient";
 import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import * as Animatable from "react-native-animatable";
 
 const URL = "http://www.toilettwinning.org";
 
@@ -35,12 +37,35 @@ class Twinning extends Component {
     };
   };
 
+  componentWillMount() {
+    this.animatedValue = new Animated.Value(1);
+  }
+
+  //shrink button
+  handlePressIn = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 0.9
+    }).start();
+  };
+
+  //expand button
+  handlePressOut = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 1
+      //perform the button's job
+    }).start(this.handlePress);
+  };
+
   //redirects to website
   handlePress = () => {
     Linking.openURL(URL).catch(err => console.error("An error occurred", err));
   };
 
   render() {
+    //the animateable buttons need to reference size values which can dynamically change
+    const animationWrapper = {
+      transform: [{ scale: this.animatedValue }]
+    };
     return (
       <SafeAreaView style={styles.parent}>
         <View style={styles.aboutWrapper}>
@@ -59,18 +84,19 @@ class Twinning extends Component {
           }}
         />
         <View style={styles.buttonWrapper}>
-          <TouchableHighlight
-            onPress={this.handlePress}
-            underlayColor={colors.light}
-            style={styles.touchable}
+          <TouchableWithoutFeedback
+            onPressIn={() => this.handlePressIn(this.animatedValue)}
+            onPressOut={() => this.handlePressOut(this.animatedValue)}
           >
-            <LinearGradient
-              colors={[colors.primary, colors.primary, colors.dark]}
-              style={styles.theButton}
-            >
-              <Text style={styles.goToWebsite}>Go To Website</Text>
-            </LinearGradient>
-          </TouchableHighlight>
+            <Animated.View style={animationWrapper}>
+              <LinearGradient
+                colors={[colors.primary, colors.primary, colors.dark]}
+                style={styles.theButton}
+              >
+                <Text style={styles.goToWebsite}>Go To Website</Text>
+              </LinearGradient>
+            </Animated.View>
+          </TouchableWithoutFeedback>
         </View>
       </SafeAreaView>
     );

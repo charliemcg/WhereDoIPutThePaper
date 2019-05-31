@@ -20,20 +20,19 @@ export default {
     margin: "5%",
     textAlign: "center"
   },
-  buttonWrapper: {
+  animationWrapper: {
     justifyContent: "center",
     alignItems: "center"
   },
-  bookButton: {
+  gradient: {
     width: "80%",
+    justifyContent: "center",
     borderWidth: 1,
     borderColor: colors.dark,
     borderStyle: "solid",
     borderRadius: 6
   },
   getBookWrapper: {
-    marginTop: "3%",
-    marginBottom: "3%",
     flexDirection: "row",
     justifyContent: "space-around"
   },

@@ -3,10 +3,12 @@ import {
   View,
   Text,
   Image,
+  TouchableWithoutFeedback,
   TouchableHighlight,
   Linking,
   Platform,
-  Alert
+  Alert,
+  Animated
 } from "react-native";
 import styles from "./styles";
 import facebook from "../../images/facebook.png";
@@ -62,6 +64,46 @@ class Contact extends Component {
     };
   };
 
+  componentWillMount() {
+    //each animated button needs an animated value
+    this.animatedWebValue = new Animated.Value(1);
+    this.animatedEmailValue = new Animated.Value(1);
+    this.animatedFacebookValue = new Animated.Value(1);
+    this.animatedTwitterValue = new Animated.Value(1);
+  }
+
+  //shrink selected button
+  handlePressIn = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 0.9
+    }).start();
+  };
+
+  //bounce the selected button
+  handlePressOut = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 1
+      //perform the selected button's job
+    }).start(() => this.navigateToURL(valueToAnimate));
+  };
+
+  navigateToURL(valueToAnimate) {
+    switch (valueToAnimate) {
+      case this.animatedWebValue:
+        this.handleWebsite();
+        break;
+      case this.animatedEmailValue:
+        this.handleEmail();
+        break;
+      case this.animatedFacebookValue:
+        this.handleFacebook();
+        break;
+      case this.animatedTwitterValue:
+        this.handleTwitter();
+        break;
+    }
+  }
+
   //redirect to Twitter
   handleTwitter = () => {
     isiOS
@@ -103,70 +145,99 @@ class Contact extends Component {
   };
 
   render() {
+    //the animateable buttons need to reference size values which can dynamically change
+    const animatedWebStyle = {
+      transform: [{ scale: this.animatedWebValue }]
+    };
+    const animatedEmailStyle = {
+      transform: [{ scale: this.animatedEmailValue }]
+    };
+    const animatedFacebookStyle = {
+      transform: [{ scale: this.animatedFacebookValue }]
+    };
+    const animatedTwitterStyle = {
+      transform: [{ scale: this.animatedTwitterValue }]
+    };
     return (
       <View style={styles.parent}>
         <View style={styles.btnWrapper}>
-          <TouchableHighlight
-            onPress={() => this.handleWebsite()}
-            underlayColor={colors.light}
-            style={styles.touchable}
+          <TouchableWithoutFeedback
+            onPressIn={() => this.handlePressIn(this.animatedWebValue)}
+            onPressOut={() => this.handlePressOut(this.animatedWebValue)}
+            // onPress={() => this.handleWebsite()}
+            // underlayColor={colors.light}
+            // style={styles.touchable}
           >
-            <LinearGradient
-              colors={[colors.primary, colors.primary, colors.dark]}
-              style={styles.gradient}
-            >
-              <View style={styles.textWrapper}>
-                <Text style={styles.btnText}>View in web</Text>
-              </View>
-              <View style={styles.imgWrapper}>
-                <Icon name="web" color="white" size={40} />
-              </View>
-            </LinearGradient>
-          </TouchableHighlight>
+            <Animated.View style={[styles.touchable, animatedWebStyle]}>
+              <LinearGradient
+                colors={[colors.primary, colors.primary, colors.dark]}
+                style={styles.gradient}
+              >
+                <View style={styles.textWrapper}>
+                  <Text style={styles.btnText}>View in web</Text>
+                </View>
+                <View style={styles.imgWrapper}>
+                  <Icon name="web" color="white" size={40} />
+                </View>
+              </LinearGradient>
+            </Animated.View>
+          </TouchableWithoutFeedback>
         </View>
         <View style={styles.btnWrapper}>
-          <TouchableHighlight
-            onPress={() => this.handleEmail()}
-            underlayColor={colors.light}
-            style={styles.touchable}
+          <TouchableWithoutFeedback
+            onPressIn={() => this.handlePressIn(this.animatedEmailValue)}
+            onPressOut={() => this.handlePressOut(this.animatedEmailValue)}
+            // onPress={() => this.handleEmail()}
+            // underlayColor={colors.light}
+            // style={styles.touchable}
           >
-            <LinearGradient
-              colors={[colors.primary, colors.primary, colors.dark]}
-              style={styles.gradient}
-            >
-              <View style={styles.textWrapper}>
-                <Text style={styles.btnText}>Email</Text>
-              </View>
-              <View style={styles.imgWrapper}>
-                <Icon name="email-outline" color="white" size={40} />
-              </View>
-            </LinearGradient>
-          </TouchableHighlight>
+            <Animated.View style={[styles.touchable, animatedEmailStyle]}>
+              <LinearGradient
+                colors={[colors.primary, colors.primary, colors.dark]}
+                style={styles.gradient}
+              >
+                <View style={styles.textWrapper}>
+                  <Text style={styles.btnText}>Email</Text>
+                </View>
+                <View style={styles.imgWrapper}>
+                  <Icon name="email-outline" color="white" size={40} />
+                </View>
+              </LinearGradient>
+            </Animated.View>
+          </TouchableWithoutFeedback>
         </View>
         <View style={styles.social}>
           <View style={styles.shareText}>
             <Text style={{ fontSize: 17 }}>Share this app!</Text>
           </View>
-          <TouchableHighlight
-            style={styles.socialIcon}
-            onPress={() => this.handleFacebook()}
-            underlayColor={colors.notQuiteWhite}
+          <TouchableWithoutFeedback
+            onPressIn={() => this.handlePressIn(this.animatedFacebookValue)}
+            onPressOut={() => this.handlePressOut(this.animatedFacebookValue)}
+            // style={styles.socialIcon}
+            // onPress={() => this.handleFacebook()}
+            // underlayColor={colors.notQuiteWhite}
           >
-            <Image
-              style={{ width: socialSize, height: socialSize }}
-              source={facebook}
-            />
-          </TouchableHighlight>
-          <TouchableHighlight
-            style={styles.socialIcon}
-            onPress={() => this.handleTwitter()}
-            underlayColor={colors.notQuiteWhite}
+            <Animated.View style={[styles.socialIcon, animatedFacebookStyle]}>
+              <Image
+                style={{ width: socialSize, height: socialSize }}
+                source={facebook}
+              />
+            </Animated.View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPressIn={() => this.handlePressIn(this.animatedTwitterValue)}
+            onPressOut={() => this.handlePressOut(this.animatedTwitterValue)}
+            // style={styles.socialIcon}
+            // onPress={() => this.handleTwitter()}
+            // underlayColor={colors.notQuiteWhite}
           >
-            <Image
-              style={{ width: socialSize, height: socialSize }}
-              source={twitter}
-            />
-          </TouchableHighlight>
+            <Animated.View style={[styles.socialIcon, animatedTwitterStyle]}>
+              <Image
+                style={{ width: socialSize, height: socialSize }}
+                source={twitter}
+              />
+            </Animated.View>
+          </TouchableWithoutFeedback>
         </View>
         <View style={styles.credit}>
           <Text style={styles.text}>

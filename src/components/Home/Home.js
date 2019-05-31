@@ -5,12 +5,12 @@ import {
   Text,
   ScrollView,
   ActivityIndicator,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
   Linking,
   Platform,
   SafeAreaView,
   Alert,
-  TouchableWithoutFeedback
+  Animated
 } from "react-native";
 import styles from "./styles";
 import { connect } from "react-redux";
@@ -44,16 +44,32 @@ class Home extends Component {
     };
   };
 
+  componentWillMount() {
+    //get persisted country from AsyncStorage
+    this.getCountryFromDevice();
+    this.animatedValue = new Animated.Value(1);
+  }
+
+  //shrink button
+  handlePressIn = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 0.9
+    }).start();
+  };
+
+  //expand button
+  handlePressOut = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 1
+      //perform the button's job
+    }).start(this.handlePress);
+  };
+
   handlePress = () => {
     Linking.openURL(this.props.link).catch(err =>
       console.error("An error occurred", err)
     );
   };
-
-  componentWillMount() {
-    //get persisted country from AsyncStorage
-    this.getCountryFromDevice();
-  }
 
   getCountryFromDevice = async () => {
     try {
@@ -115,6 +131,11 @@ class Home extends Component {
         </View>
       );
 
+    //the animateable buttons need to reference size values which can dynamically change
+    const animationWrapper = {
+      transform: [{ scale: this.animatedValue }]
+    };
+
     return (
       <SafeAreaView style={styles.parent}>
         {getCountryView}
@@ -124,25 +145,27 @@ class Home extends Component {
           </View>
         </ScrollView>
         <View style={styles.buttonWrapper}>
-          <TouchableHighlight
-            onPress={this.handlePress}
-            underlayColor={colors.light}
-            style={styles.bookButton}
+          <TouchableWithoutFeedback
+            onPressIn={() => this.handlePressIn(this.animatedValue)}
+            onPressOut={() => this.handlePressOut(this.animatedValue)}
           >
-            <LinearGradient
-              colors={[colors.primary, colors.primary, colors.dark]}
-            >
-              <View style={styles.getBookWrapper}>
-                <View>
-                  <Text style={styles.getTheBook}>Get the book</Text>
-                  <Text style={styles.supportAppreciated}>
-                    Your support is appreciated
-                  </Text>
+            <Animated.View style={[styles.animationWrapper, animationWrapper]}>
+              <LinearGradient
+                colors={[colors.primary, colors.primary, colors.dark]}
+                style={styles.gradient}
+              >
+                <View style={styles.getBookWrapper}>
+                  <View>
+                    <Text style={styles.getTheBook}>Get the book</Text>
+                    <Text style={styles.supportAppreciated}>
+                      Your support is appreciated
+                    </Text>
+                  </View>
+                  <Icon name="book" color={colors.notQuiteWhite} size={60} />
                 </View>
-                <Icon name="book" color={colors.notQuiteWhite} size={60} />
-              </View>
-            </LinearGradient>
-          </TouchableHighlight>
+              </LinearGradient>
+            </Animated.View>
+          </TouchableWithoutFeedback>
         </View>
       </SafeAreaView>
     );

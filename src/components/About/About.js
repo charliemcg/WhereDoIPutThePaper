@@ -4,8 +4,9 @@ import {
   Text,
   ScrollView,
   Linking,
-  TouchableHighlight,
-  SafeAreaView
+  TouchableWithoutFeedback,
+  SafeAreaView,
+  Animated
 } from "react-native";
 import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -36,11 +37,35 @@ class About extends Component {
     };
   };
 
+  componentWillMount() {
+    this.animatedValue = new Animated.Value(1);
+  }
+
+  //shrink button
+  handlePressIn = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 0.9
+    }).start();
+  };
+
+  //expand button
+  handlePressOut = valueToAnimate => {
+    Animated.spring(valueToAnimate, {
+      toValue: 1
+      //perform the button's job
+    }).start(this.handlePress);
+  };
+
   handlePress = () => {
     Linking.openURL(URL).catch(err => console.error("An error occurred", err));
   };
 
   render() {
+    //the animateable buttons need to reference size values which can dynamically change
+    const animationWrapper = {
+      transform: [{ scale: this.animatedValue }]
+    };
+
     return (
       <SafeAreaView style={styles.parent}>
         <Animatable.View
@@ -87,25 +112,33 @@ class About extends Component {
               bog somewhere posh.
             </Text>
             <View style={styles.buttonWrapper}>
-              <TouchableHighlight
-                onPress={this.handlePress}
-                underlayColor={colors.light}
-                style={styles.bookButton}
+              <TouchableWithoutFeedback
+                onPressIn={() => this.handlePressIn(this.animatedValue)}
+                onPressOut={() => this.handlePressOut(this.animatedValue)}
               >
-                <LinearGradient
-                  colors={[colors.primary, colors.primary, colors.dark]}
+                <Animated.View
+                  style={[styles.animationWrapper, animationWrapper]}
                 >
-                  <View style={styles.getBookWrapper}>
-                    <View>
-                      <Text style={styles.getTheBook}>Guide books</Text>
-                      <Text style={styles.supportAppreciated}>
-                        Your support is appreciated
-                      </Text>
+                  <LinearGradient
+                    colors={[colors.primary, colors.primary, colors.dark]}
+                    style={styles.gradient}
+                  >
+                    <View style={styles.getBookWrapper}>
+                      <View>
+                        <Text style={styles.getTheBook}>Guide books</Text>
+                        <Text style={styles.supportAppreciated}>
+                          Your support is appreciated
+                        </Text>
+                      </View>
+                      <Icon
+                        name="book"
+                        color={colors.notQuiteWhite}
+                        size={60}
+                      />
                     </View>
-                    <Icon name="book" color={colors.notQuiteWhite} size={60} />
-                  </View>
-                </LinearGradient>
-              </TouchableHighlight>
+                  </LinearGradient>
+                </Animated.View>
+              </TouchableWithoutFeedback>
             </View>
           </ScrollView>
         </Animatable.View>

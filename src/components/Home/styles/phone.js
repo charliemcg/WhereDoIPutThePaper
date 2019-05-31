@@ -53,20 +53,22 @@ export default {
     padding: 15
   },
   buttonWrapper: {
-    height: "15%",
+    height: "15%"
+  },
+  animationWrapper: {
     justifyContent: "center",
     alignItems: "center"
   },
-  bookButton: {
+  gradient: {
+    height: "90%",
     width: "80%",
+    justifyContent: "center",
     borderWidth: 1,
     borderColor: colors.dark,
     borderStyle: "solid",
     borderRadius: 6
   },
   getBookWrapper: {
-    marginTop: "3%",
-    marginBottom: "3%",
     flexDirection: "row",
     justifyContent: "space-around"
   },
