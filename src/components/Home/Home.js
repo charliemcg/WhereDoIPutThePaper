@@ -8,7 +8,9 @@ import {
   TouchableHighlight,
   Linking,
   Platform,
-  SafeAreaView
+  SafeAreaView,
+  Alert,
+  TouchableWithoutFeedback
 } from "react-native";
 import styles from "./styles";
 import { connect } from "react-redux";
@@ -21,6 +23,7 @@ import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icon from "react-native-vector-icons/FontAwesome";
 import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
+import * as Animatable from "react-native-animatable";
 
 class Home extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -86,9 +89,17 @@ class Home extends Component {
     }/${flagAppearance}/64.png`;
 
     const getFlagView = flagImgUrl !== null && (
-      <View style={styles.flag}>
-        <Image source={{ uri: flagImgUrl }} style={styles.flagDimensions} />
-      </View>
+      <Animatable.View ref="animatableFlag" style={styles.flag}>
+        <TouchableWithoutFeedback
+          onPress={() => this.refs["animatableFlag"].swing(500)}
+        >
+          <Image
+            source={{ uri: flagImgUrl }}
+            style={styles.flagDimensions}
+            // onPress={() => this.refs["animatableFlag"].swing(500)}
+          />
+        </TouchableWithoutFeedback>
+      </Animatable.View>
     );
 
     //This is where the user selects a country
