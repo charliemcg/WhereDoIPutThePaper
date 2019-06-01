@@ -15,7 +15,6 @@ import colors from "../../colors";
 import zambiaImg from "../../images/zambiaTwinning.png";
 import LinearGradient from "react-native-linear-gradient";
 import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import * as Animatable from "react-native-animatable";
 
 const URL = "http://www.toilettwinning.org";
 

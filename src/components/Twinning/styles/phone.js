@@ -24,9 +24,6 @@ export default {
     left: "50%",
     right: "10%"
   },
-  touchable: {
-    borderRadius: 7
-  },
   theButton: {
     paddingTop: 10,
     paddingBottom: 10,

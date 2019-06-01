@@ -1,4 +1,6 @@
+import { Dimensions } from "react-native";
 import colors from "../../../colors";
+const height = Dimensions.get("window").height;
 
 export default {
   parent: {
@@ -15,19 +17,22 @@ export default {
     elevation: 10
   },
   flag: {
-    position: "absolute",
-    width: "30%",
-    alignItems: "center"
+    justifyContent: "center",
+    alignItems: "flex-end",
+    height: "100%",
+    flex: 2
+  },
+  flagDimensions: {
+    width: height * 0.09,
+    height: height * 0.09
   },
   picker: {
-    position: "absolute",
-    width: "70%",
-    right: 0,
-    height: "50%"
+    height: "50%",
+    alignItems: "center",
+    flex: 6
   },
   descriptionScroll: {
-    height: "60%",
-    paddingTop: "6%"
+    height: "65%"
   },
   descriptionWrapper: {
     alignItems: "stretch",
@@ -36,14 +41,20 @@ export default {
   },
   description: {
     textAlign: "center",
-    fontSize: 22,
+    fontSize: 25,
     color: colors.notQuiteBlack,
     padding: 50
   },
-  bookButton: {
-    marginLeft: "25%",
-    marginRight: "25%",
-    marginBottom: "6%",
+  buttonWrapper: {
+    height: "15%"
+  },
+  animationWrapper: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  gradient: {
+    width: "50%",
+    justifyContent: "center",
     borderWidth: 1,
     borderColor: colors.dark,
     borderStyle: "solid",

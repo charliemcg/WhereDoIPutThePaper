@@ -7,20 +7,27 @@ export default {
     textAlign: "center",
     backgroundColor: colors.notQuiteWhite
   },
+  animationScrollWrapper: {
+    height: "100%"
+  },
   scrollWrapper: {
-    height: "85%"
+    height: "100%"
   },
   about: {
     justifyContent: "center",
-    fontSize: 17,
+    fontSize: 20,
     color: colors.notQuiteBlack,
-    padding: "10%",
+    margin: "5%",
     textAlign: "center"
   },
-  bookButton: {
-    marginLeft: "25%",
-    marginRight: "25%",
-    marginBottom: "6%",
+  animationWrapper: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "5%"
+  },
+  gradient: {
+    width: "50%",
+    justifyContent: "center",
     borderWidth: 1,
     borderColor: colors.dark,
     borderStyle: "solid",
