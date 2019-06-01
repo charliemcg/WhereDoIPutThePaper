@@ -71,7 +71,7 @@ class About extends Component {
         <Animatable.View
           animation="slideInUp"
           duration={700}
-          style={styles.animationWrapper}
+          style={styles.animationScrollWrapper}
         >
           <ScrollView style={styles.scrollWrapper}>
             <Text style={styles.about}>
@@ -111,7 +111,9 @@ class About extends Component {
               held responsible for an international incident if you bung up the
               bog somewhere posh.
             </Text>
-            <View style={styles.buttonWrapper}>
+            <View
+            // style={styles.buttonWrapper}
+            >
               <TouchableWithoutFeedback
                 onPressIn={() => this.handlePressIn(this.animatedValue)}
                 onPressOut={() => this.handlePressOut(this.animatedValue)}

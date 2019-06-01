@@ -4,7 +4,6 @@ import {
   Text,
   Image,
   TouchableWithoutFeedback,
-  TouchableHighlight,
   Linking,
   Platform,
   Alert,
@@ -141,7 +140,9 @@ class Contact extends Component {
 
   //open email app and populate 'to' field with author's email
   handleEmail = () => {
-    email(EMAIL, {}).catch(err => console.error("An error occured", err));
+    email(EMAIL, {}).catch(err => {
+      console.error("An error occured", err);
+    });
   };
 
   render() {
@@ -160,13 +161,11 @@ class Contact extends Component {
     };
     return (
       <View style={styles.parent}>
+        {/* view in web */}
         <View style={styles.btnWrapper}>
           <TouchableWithoutFeedback
             onPressIn={() => this.handlePressIn(this.animatedWebValue)}
             onPressOut={() => this.handlePressOut(this.animatedWebValue)}
-            // onPress={() => this.handleWebsite()}
-            // underlayColor={colors.light}
-            // style={styles.touchable}
           >
             <Animated.View style={[styles.touchable, animatedWebStyle]}>
               <LinearGradient
@@ -183,13 +182,11 @@ class Contact extends Component {
             </Animated.View>
           </TouchableWithoutFeedback>
         </View>
+        {/* email */}
         <View style={styles.btnWrapper}>
           <TouchableWithoutFeedback
             onPressIn={() => this.handlePressIn(this.animatedEmailValue)}
             onPressOut={() => this.handlePressOut(this.animatedEmailValue)}
-            // onPress={() => this.handleEmail()}
-            // underlayColor={colors.light}
-            // style={styles.touchable}
           >
             <Animated.View style={[styles.touchable, animatedEmailStyle]}>
               <LinearGradient
@@ -206,6 +203,7 @@ class Contact extends Component {
             </Animated.View>
           </TouchableWithoutFeedback>
         </View>
+        {/* share */}
         <View style={styles.social}>
           <View style={styles.shareText}>
             <Text style={{ fontSize: 17 }}>Share this app!</Text>
@@ -213,9 +211,6 @@ class Contact extends Component {
           <TouchableWithoutFeedback
             onPressIn={() => this.handlePressIn(this.animatedFacebookValue)}
             onPressOut={() => this.handlePressOut(this.animatedFacebookValue)}
-            // style={styles.socialIcon}
-            // onPress={() => this.handleFacebook()}
-            // underlayColor={colors.notQuiteWhite}
           >
             <Animated.View style={[styles.socialIcon, animatedFacebookStyle]}>
               <Image
@@ -227,9 +222,6 @@ class Contact extends Component {
           <TouchableWithoutFeedback
             onPressIn={() => this.handlePressIn(this.animatedTwitterValue)}
             onPressOut={() => this.handlePressOut(this.animatedTwitterValue)}
-            // style={styles.socialIcon}
-            // onPress={() => this.handleTwitter()}
-            // underlayColor={colors.notQuiteWhite}
           >
             <Animated.View style={[styles.socialIcon, animatedTwitterStyle]}>
               <Image
@@ -239,6 +231,7 @@ class Contact extends Component {
             </Animated.View>
           </TouchableWithoutFeedback>
         </View>
+        {/* credit */}
         <View style={styles.credit}>
           <Text style={styles.text}>
             Matt Kitson - {new Date().getFullYear()}

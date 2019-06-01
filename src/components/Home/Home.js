@@ -24,6 +24,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 import * as Animatable from "react-native-animatable";
+import PropTypes from "prop-types";
 
 class Home extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -171,6 +172,18 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  name: PropTypes.string,
+  flag: PropTypes.string,
+  description: PropTypes.string
+};
+
+Home.defaultPropTypes = {
+  name: "",
+  flag: "",
+  description: ""
+};
 
 const mapStateToProps = state => {
   return {

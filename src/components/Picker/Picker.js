@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import { Alert } from "react-native";
 import { countries } from "../../countryList";
 import { connect } from "react-redux";
 import { changeCountry } from "../../actions";
 import ModalSelector from "react-native-modal-selector";
 import colors from "../../colors";
 import Device from "react-native-device-detection";
+import PropTypes from "prop-types";
 
 //make label text bigger for tablets
 const labelFont = Device.isTablet ? 25 : 15;
 
-class CountryPicker extends Component {
+class Picker extends Component {
   handleChange = event => {
     this.props.changeCountry(event);
   };
@@ -39,6 +41,12 @@ class CountryPicker extends Component {
   }
 }
 
+Picker.propTypes = {
+  name: PropTypes.string.isRequired,
+  flag: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};
+
 const mapStateToProps = state => {
   return {
     name: state.name,
@@ -58,4 +66,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CountryPicker);
+)(Picker);

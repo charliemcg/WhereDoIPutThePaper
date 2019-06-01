@@ -7,7 +7,7 @@ export default {
     textAlign: "center",
     backgroundColor: colors.notQuiteWhite
   },
-  animationWrapper: {
+  animationScrollWrapper: {
     height: "100%"
   },
   scrollWrapper: {
@@ -22,7 +22,8 @@ export default {
   },
   animationWrapper: {
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: "5%"
   },
   gradient: {
     width: "80%",
