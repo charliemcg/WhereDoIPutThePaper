@@ -110,18 +110,14 @@ class Home extends Component {
         <TouchableWithoutFeedback
           onPress={() => this.refs["animatableFlag"].swing(500)}
         >
-          <Image
-            source={{ uri: flagImgUrl }}
-            style={styles.flagDimensions}
-            // onPress={() => this.refs["animatableFlag"].swing(500)}
-          />
+          <Image source={{ uri: flagImgUrl }} style={styles.flagDimensions} />
         </TouchableWithoutFeedback>
       </Animatable.View>
     );
 
     //This is where the user selects a country
     const getCountryView =
-      this.props.name == null ? (
+      this.props.name === null ? (
         <ActivityIndicator size="large" style={styles.countryWrapper} />
       ) : (
         <View style={styles.countryWrapper}>

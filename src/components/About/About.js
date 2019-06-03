@@ -111,9 +111,7 @@ class About extends Component {
               held responsible for an international incident if you bung up the
               bog somewhere posh.
             </Text>
-            <View
-            // style={styles.buttonWrapper}
-            >
+            <View>
               <TouchableWithoutFeedback
                 onPressIn={() => this.handlePressIn(this.animatedValue)}
                 onPressOut={() => this.handlePressOut(this.animatedValue)}
