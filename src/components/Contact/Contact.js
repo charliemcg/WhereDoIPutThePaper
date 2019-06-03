@@ -20,6 +20,7 @@ import LinearGradient from "react-native-linear-gradient";
 import Device from "react-native-device-detection";
 import Share from "react-native-share";
 import * as Animatable from "react-native-animatable";
+import strings from "../../strings";
 
 const isiOS = Platform.OS === "ios" ? true : false;
 
@@ -173,7 +174,7 @@ class Contact extends Component {
                 style={styles.gradient}
               >
                 <View style={styles.textWrapper}>
-                  <Text style={styles.btnText}>View in web</Text>
+                  <Text style={styles.btnText}>{strings.viewInWeb}</Text>
                 </View>
                 <View style={styles.imgWrapper}>
                   <Icon name="web" color="white" size={40} />
@@ -194,7 +195,7 @@ class Contact extends Component {
                 style={styles.gradient}
               >
                 <View style={styles.textWrapper}>
-                  <Text style={styles.btnText}>Email</Text>
+                  <Text style={styles.btnText}>{strings.email}</Text>
                 </View>
                 <View style={styles.imgWrapper}>
                   <Icon name="email-outline" color="white" size={40} />
@@ -234,7 +235,7 @@ class Contact extends Component {
         {/* credit */}
         <View style={styles.credit}>
           <Text style={styles.text}>
-            Matt Kitson - {new Date().getFullYear()}
+            {strings.author} - {new Date().getFullYear()}
           </Text>
         </View>
       </View>

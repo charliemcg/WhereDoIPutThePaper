@@ -25,6 +25,7 @@ import colors from "../../colors";
 import LinearGradient from "react-native-linear-gradient";
 import * as Animatable from "react-native-animatable";
 import PropTypes from "prop-types";
+import strings from "../../strings";
 
 class Home extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -153,9 +154,9 @@ class Home extends Component {
               >
                 <View style={styles.getBookWrapper}>
                   <View>
-                    <Text style={styles.getTheBook}>Get the book</Text>
+                    <Text style={styles.getTheBook}>{strings.getTheBook}}</Text>
                     <Text style={styles.supportAppreciated}>
-                      Your support is appreciated
+                      {strings.supportAppreciated}
                     </Text>
                   </View>
                   <Icon name="book" color={colors.notQuiteWhite} size={60} />

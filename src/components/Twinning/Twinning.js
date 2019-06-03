@@ -15,6 +15,7 @@ import colors from "../../colors";
 import zambiaImg from "../../images/zambiaTwinning.png";
 import LinearGradient from "react-native-linear-gradient";
 import HamburgerIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import strings from "../../strings";
 
 const URL = "http://www.toilettwinning.org";
 
@@ -69,12 +70,7 @@ class Twinning extends Component {
     return (
       <SafeAreaView style={styles.parent}>
         <View style={styles.aboutWrapper}>
-          <Text style={styles.about}>
-            As I was fiddling about with this site again, it occurred to me how
-            many countries don't have access to decent water, let alone toilets.
-            So, if you want to help, go to the Toilet Twinning website, donate,
-            and make a difference. I've just bought a latrine in Liberia.
-          </Text>
+          <Text style={styles.about}>{strings.twinning}</Text>
         </View>
         <Image
           source={zambiaImg}
@@ -93,7 +89,7 @@ class Twinning extends Component {
                 colors={[colors.primary, colors.primary, colors.dark]}
                 style={styles.theButton}
               >
-                <Text style={styles.goToWebsite}>Go To Website</Text>
+                <Text style={styles.goToWebsite}>{strings.goToWebsite}</Text>
               </LinearGradient>
             </Animated.View>
           </TouchableWithoutFeedback>

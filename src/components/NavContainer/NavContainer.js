@@ -14,6 +14,7 @@ import colors from "../../colors";
 import Device from "react-native-device-detection";
 import LinearGradient from "react-native-linear-gradient";
 import rollImg from "../../images/PaperIconNoBackground.png";
+import strings from "../../strings";
 
 //make label text bigger for tablets
 const labelFont = Device.isTablet ? 20 : 15;
@@ -47,11 +48,9 @@ const DrawerHeader = props => (
           paddingBottom: "3%"
         }}
       >
-        Where Do I Put The Paper?
+        {strings.title}
       </Text>
-      <Text style={{ color: colors.notQuiteWhite }}>
-        www.wheredoiputthepaper.com
-      </Text>
+      <Text style={{ color: colors.notQuiteWhite }}>{strings.website}</Text>
     </LinearGradient>
     <DrawerItems {...props} />
   </View>
@@ -67,7 +66,7 @@ const HomeStack = createStackNavigator(
     Home: {
       screen: Home,
       navigationOptions: {
-        headerTitle: "Where Do I Put The Paper?",
+        headerTitle: strings.title,
         headerTitleStyle: {
           fontSize: 17,
           width: Dimensions.get("window").width
@@ -83,7 +82,7 @@ const AboutStack = createStackNavigator(
     About: {
       screen: About,
       navigationOptions: {
-        headerTitle: "About"
+        headerTitle: strings.about
       }
     }
   },
@@ -95,8 +94,8 @@ const TwinningStack = createStackNavigator(
     Twinning: {
       screen: Twinning,
       navigationOptions: {
-        headerTitle: "Toilet Twinning",
-        drawerLabel: "Contribute to Toilet Twinning"
+        headerTitle: strings.toiletTwinning,
+        drawerLabel: strings.contributeToiletTwinning
       }
     }
   },
@@ -108,7 +107,7 @@ const ContactStack = createStackNavigator(
     Contact: {
       screen: Contact,
       navigationOptions: {
-        headerTitle: "Contact"
+        headerTitle: strings.contact
       }
     }
   },
@@ -126,7 +125,7 @@ const Navigator = createDrawerNavigator(
     Twinning: {
       screen: TwinningStack,
       navigationOptions: {
-        drawerLabel: "Contribute to Toilet Twinning"
+        drawerLabel: strings.contributeToiletTwinning
       }
     },
     Contact: {
