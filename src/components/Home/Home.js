@@ -154,7 +154,7 @@ class Home extends Component {
               >
                 <View style={styles.getBookWrapper}>
                   <View>
-                    <Text style={styles.getTheBook}>{strings.getTheBook}}</Text>
+                    <Text style={styles.getTheBook}>{strings.getTheBook}</Text>
                     <Text style={styles.supportAppreciated}>
                       {strings.supportAppreciated}
                     </Text>

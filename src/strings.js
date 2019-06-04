@@ -17,5 +17,5 @@ export default {
   contact: "Contact",
   twinning:
     "As I was fiddling about with this site again, it occurred to me how many countries don't have access to decent water, let alone toilets. So, if you want to help, go to the Toilet Twinning website, donate, and make a difference. I've just bought a latrine in Liberia.",
-  goToWebsite: "Got To Website"
+  goToWebsite: "Go To Website"
 };
